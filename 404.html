@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>找不到頁面</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/37dd6d0e3c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div class="container text-center m-5">
+  
+<p>  真可惜！你點選的網址現在已經不存在囉！</p>
+  <img src="https://stickershop.line-scdn.net/stickershop/v1/product/3113742/LINEStorePC/main.png" class="m-2">
+
+<p>  預計將在約 <span id="timeout">5</span> 秒後返回首頁。</p>
+<p>  如果你很急著想看文章，你可以 <strong><a href="https://erik1110.github.io/">點這裡</a></strong> 返回首頁。<br>  </p></div><p></p>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+<script>
+let countTime = 5;
+
+function count() {
+  document.getElementById('timeout').textContent = countTime;
+  countTime -= 1;
+  if (countTime === 0) {
+    location.href = 'https://erik1110.github.io';
+  }
+
+  setTimeout(() => {
+    count();
+  }, 1000);
+}
+
+count();
+</script>
+
+</html>

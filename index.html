@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Erik's Blog - Don't count the day. Make the day counts.</title><meta name="author" content="Erik Ho"><meta name="copyright" content="Erik Ho"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hi there, this is Erik&amp;#39;s blog!"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://erik1110.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Erik Ho","link":"連結: ","source":"來源: Erik's Blog","info":"著作權歸作者所有。商業轉載請聯繫作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Erik\'s Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-11-01 11:03:49'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="https://miro.medium.com/v2/resize:fill:176:176/1*q0yyB8RatBptVhviwQQPZA.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/random"><i class="fa-fw fa fa-question"></i><span> 隨機</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://jsd.012700.xyz/gh/jerryc127/butterfly_cdn@2.1.0/top_img/index.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Erik's Blog"><span class="site-name">Erik's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/random"><i class="fa-fw fa fa-question"></i><span> 隨機</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Erik's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/erik1110" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://medium.com/@erikho_51835" target="_blank" title="Medium"><i class="fab fa-medium"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/11/01/ietls-technology/" title="A lot of people have become dependent on technology as it plays a big role in our daily lives."><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/11/01/ietls-technology/Computer.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="A lot of people have become dependent on technology as it plays a big role in our daily lives."></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/01/ietls-technology/" title="A lot of people have become dependent on technology as it plays a big role in our daily lives.">A lot of people have become dependent on technology as it plays a big role in our daily lives.</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-11-01T02:31:13.441Z" title="發表於 2023-11-01 10:31:13">2023-11-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/English/">English</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/IELTS/">IELTS</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Task2/">Task2</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Assignment/">Assignment</a></span></div><div class="content">Do you agree that living in the computer age has more advantages than disadvantages? Describe the positive and negative impacts of technology on our lives and give your opinion.
+
+
+Modern technology has played a crucial role in our daily lives, such as computers and mobile phones. These bring us convenience, creativity and economical effects, which is difficult to imagine living without these cutting age technologies. This essay examine the upsides and downsides of computer age.
+In terms of advan ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/11/01/ielts-workplace/" title="Establishing good relationships in the workplace is not important, as the primary goal of every person is to focus on work."><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/11/01/ielts-workplace/Workplace.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Establishing good relationships in the workplace is not important, as the primary goal of every person is to focus on work."></a></div><div class="recent-post-info"><a class="article-title" href="/2023/11/01/ielts-workplace/" title="Establishing good relationships in the workplace is not important, as the primary goal of every person is to focus on work.">Establishing good relationships in the workplace is not important, as the primary goal of every person is to focus on work.</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-11-01T01:46:03.000Z" title="發表於 2023-11-01 09:46:03">2023-11-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/English/">English</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/IELTS/">IELTS</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Task2/">Task2</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Assignment/">Assignment</a></span></div><div class="content">To what extent do you agree with this statement?
+
+
+It is undeniable that companies are profitable oriented places, aiming for higher revenue or prestigious fame. Some people argue that the most critical goal for employees is to solely concentrate on work. However, I do not agree with this and I will provide two compelling reasons in this essay.
+To begin with, projects could be completed more smoothly with better relationships. Some projects need the cooperation of individuals and huge funds. For ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/10/31/ielts-job/" title="In many countries there is a shortage of suitable people for essential jobs. What do you think are the causes of this problem and what measures could be taken to solve it?"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/10/31/ielts-job/Job.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="In many countries there is a shortage of suitable people for essential jobs. What do you think are the causes of this problem and what measures could be taken to solve it?"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/31/ielts-job/" title="In many countries there is a shortage of suitable people for essential jobs. What do you think are the causes of this problem and what measures could be taken to solve it?">In many countries there is a shortage of suitable people for essential jobs. What do you think are the causes of this problem and what measures could be taken to solve it?</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-10-31T01:35:36.000Z" title="發表於 2023-10-31 09:35:36">2023-10-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/English/">English</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/IELTS/">IELTS</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Task2/">Task2</a></span></div><div class="content">
+
+Nowadays, several nations have experienced a workforce shortage for necessary jobs, such as cleaner, farmer, and waiter. Without these kinds of labor, it might have an adverse impact on the development of the country. In this essay, I will illustrate the underlying reasons for staff shortages and offer some viable solutions on it.
+The gap between essential occupations and professional careers often results from differences in educational levels. Those who have a higher academic background tend ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/10/30/ielts-instagram/" title="The bar chart below shows the popularity of well-known Instagram accounts in 2018 and 2021."><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/10/30/ielts-instagram/Instagram_influencers.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The bar chart below shows the popularity of well-known Instagram accounts in 2018 and 2021."></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/30/ielts-instagram/" title="The bar chart below shows the popularity of well-known Instagram accounts in 2018 and 2021.">The bar chart below shows the popularity of well-known Instagram accounts in 2018 and 2021.</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-10-29T16:29:56.000Z" title="發表於 2023-10-30 00:29:56">2023-10-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/English/">English</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/IELTS/">IELTS</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Task1/">Task1</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Assignment/">Assignment</a></span></div><div class="content">
+
+The bar chart details the follower statistics for five prestigious Instagram accounts in 2018 and 2021.
+Overall, it is evident that all accounts have a considerable growth in their followers in this period. Cristiano Ronaldo reached the highest number of followers in 2021, whereas the Selena Gomez went from most to least popular over the period surveyed.
+Looking at the graph more closely, Selena Gomez had by far the most followers, with 125 million, which was more than 10 million above Ariana  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/10/27/ielts-advertising/" title="In their advertising, business nowadays usually emphasize that their products are new in some way. Why is this?"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/10/27/ielts-advertising/Advertising.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="In their advertising, business nowadays usually emphasize that their products are new in some way. Why is this?"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/27/ielts-advertising/" title="In their advertising, business nowadays usually emphasize that their products are new in some way. Why is this?">In their advertising, business nowadays usually emphasize that their products are new in some way. Why is this?</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-10-27T04:27:39.000Z" title="發表於 2023-10-27 12:27:39">2023-10-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/English/">English</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/IELTS/">IELTS</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Task2/">Task2</a></span></div><div class="content">Do you think it is a positive or negative development?
+
+
+Compelling advertisements typically catch everyone’s attention. Not only can they attract potential consumers to purchase, but they can provide the organization with greater incentive to develop new merchandise. In my opinion, it is positive development for our advertisements.
+People naturally tend to prefer novelty than the familiar. Advertisements strategically leverage this inclination to improve their visibility among potential consume ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/10/26/ielts-tourism/" title="A lot of places in the world rely on tourism as a main source of income. Unfortunately, tourism can also be a source of problems if it is not managed correctly."><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/10/26/ielts-tourism/Tourism.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="A lot of places in the world rely on tourism as a main source of income. Unfortunately, tourism can also be a source of problems if it is not managed correctly."></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/26/ielts-tourism/" title="A lot of places in the world rely on tourism as a main source of income. Unfortunately, tourism can also be a source of problems if it is not managed correctly.">A lot of places in the world rely on tourism as a main source of income. Unfortunately, tourism can also be a source of problems if it is not managed correctly.</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-10-26T01:56:25.000Z" title="發表於 2023-10-26 09:56:25">2023-10-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/English/">English</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/IELTS/">IELTS</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Task2/">Task2</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Assignment/">Assignment</a></span></div><div class="content">Describe the advantages and disadvantages of tourism in the modern world. Do you think that benefits of tourism outweigh its drawbacks?
+
+
+Traveling has recovered and become more popular after three years of severe pandemic or coronavirus. Some people assert tourism can have adverse impact on the environment. However, I do not agree with this and I will illustrate several compelling reasons for supporting the benefits of tourism outweigh its drawbacks.
+Tourism boosts the economy. In many countrie ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/10/25/ielts-expenditure/" title="The pie chart below show how much money is spent in the budget on different sectors by the UAE government in 2000."><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/10/25/ielts-expenditure/Expenditure.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The pie chart below show how much money is spent in the budget on different sectors by the UAE government in 2000."></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/25/ielts-expenditure/" title="The pie chart below show how much money is spent in the budget on different sectors by the UAE government in 2000.">The pie chart below show how much money is spent in the budget on different sectors by the UAE government in 2000.</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-10-25T01:46:52.000Z" title="發表於 2023-10-25 09:46:52">2023-10-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/English/">English</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/IELTS/">IELTS</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Task1/">Task1</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Assignment/">Assignment</a></span></div><div class="content">
+
+The pie chart illustrates the proportion of expenditure on various departments by the UAE government in 2000.
+Overall, it is clear that a huge amount of money was expended on social security in the surveyed year, whereas this figure for transportation was incredibly low.
+Looking at the pie chart more closely, one can see that social security occupied the largest amount of expenditure (100 billion), while transport was the smallest figure (9 billion). The figure of health and personal social se ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/10/23/ielts-recycling/" title="The diagram show the recycling process of aluminum cans."><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/10/23/ielts-recycling/Recycling.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The diagram show the recycling process of aluminum cans."></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/23/ielts-recycling/" title="The diagram show the recycling process of aluminum cans.">The diagram show the recycling process of aluminum cans.</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-10-23T01:32:48.000Z" title="發表於 2023-10-23 09:32:48">2023-10-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/English/">English</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/IELTS/">IELTS</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Task1/">Task1</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Assignment/">Assignment</a></span></div><div class="content">
+
+The diagram below illustrates the several stages of how to recycle aluminum cans.
+Overall, it is evident that the process commences with disposing of the used cans and ends with manufacturing containers with reusing material.
+Initially, used cans are thrown away into the trash bins then collected and sent to the special center which is particularly dealing with these containers for recycling. The aluminum cans are cleaned and sorted first, because they may be filthy and inappropriate for reusi ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/10/21/ielts-environment/" title="Some people say that the main environmental problem of our time is the loss of particular species of plants and animals. Other say that there are more import environmental problems."><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/10/21/ielts-environment/Environment.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Some people say that the main environmental problem of our time is the loss of particular species of plants and animals. Other say that there are more import environmental problems."></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/21/ielts-environment/" title="Some people say that the main environmental problem of our time is the loss of particular species of plants and animals. Other say that there are more import environmental problems.">Some people say that the main environmental problem of our time is the loss of particular species of plants and animals. Other say that there are more import environmental problems.</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-10-21T05:26:55.000Z" title="發表於 2023-10-21 13:26:55">2023-10-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/English/">English</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/IELTS/">IELTS</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Task2/">Task2</a></span></div><div class="content">Discuss both these views and give your own opinion.
+
+
+Environmental concerns have undeniably risen to the forefront of global issues in recent times. While some individuals emphasize the significance of the loss of specific species as the primary environmental challenge, others contend that there exist more critical problems warranting our immediate attention. In this essay, I will delve into both perspectives and present my own viewpoint.
+Animals and plants play pivotal roles in our ecosystem.  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/10/20/course-hex/" title="關於我參加軟體工程師的專題班的那些事"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/2023/10/20/course-hex/10.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="關於我參加軟體工程師的專題班的那些事"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/10/20/course-hex/" title="關於我參加軟體工程師的專題班的那些事">關於我參加軟體工程師的專題班的那些事</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-10-20T04:00:49.000Z" title="發表於 2023-10-20 12:00:49">2023-10-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Course/">Course</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%AA%B2%E7%A8%8B/">課程</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/">後端工程師</a></span></div><div class="content">前言這故事要提到我的職涯計畫，以前是在金融業做 Data Scientist 和 RPA (Robotic Process Automation)，那時候也有開發一些全端的網站應用。而當我接觸網站開發的那一刻起，我心中就對這塊充滿好奇心。
+當時，我提出以儀表板方式呈現各部門使用 RPA 的情況，並簡單地進行了一個概念驗證（POC）。當主管看到這個儀表板時，對此印象深刻，甚至還請旁邊的其他同事來評估我所開發的網站。那時候，我內心充滿了成就感，也因此對轉向網站開發產生了興趣。
+我平常使用的語言是 Python，開發的框架大多是 Flask、FastAPI 並搭配 Postgres。為了加深自己對於網站開發的技能，也對於現行軟體課程評估了一番，最後決定參加六角學院的軟體工程師企業專題班。
+關於課程課程主要使用 Node.js 搭配 Mongo DB 開發，這兩個也是我沒有接觸過的技術，下定決心要好好新技術，提升自己的職涯競爭力。
+這個課程主要是完成專題為導向，大致上可以列出四點：
+
+約三個月完成網站開發專案
+從零開始規劃網站線稿圖
+短時間內學習新技術
+與其他工程師遠端協作
+
+我想額外提到，每 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="https://miro.medium.com/v2/resize:fill:176:176/1*q0yyB8RatBptVhviwQQPZA.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Erik Ho</div><div class="author-info__description">Hi there, this is Erik's blog!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="mailto:oceanuheart@gmail.com"><i class="fas fa-envelope"></i><span>Mail to me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/erik1110" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://medium.com/@erikho_51835" target="_blank" title="Medium"><i class="fab fa-medium"></i></a></div></div><div class="card-widget card-calendar"><div class="card-content"><div class="item-headline"><i class="fa fa-calendar" aria-hidden="true"></i><span>文章日曆</span></div><div class="widget-wrap"></div><div class="widget" id="calendar"></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/11/01/ietls-technology/" title="A lot of people have become dependent on technology as it plays a big role in our daily lives."><img src= "/img/loading.gif" data-lazy-src="/2023/11/01/ietls-technology/Computer.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="A lot of people have become dependent on technology as it plays a big role in our daily lives."/></a><div class="content"><a class="title" href="/2023/11/01/ietls-technology/" title="A lot of people have become dependent on technology as it plays a big role in our daily lives.">A lot of people have become dependent on technology as it plays a big role in our daily lives.</a><time datetime="2023-11-01T02:31:13.441Z" title="發表於 2023-11-01 10:31:13">2023-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/01/ielts-workplace/" title="Establishing good relationships in the workplace is not important, as the primary goal of every person is to focus on work."><img src= "/img/loading.gif" data-lazy-src="/2023/11/01/ielts-workplace/Workplace.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Establishing good relationships in the workplace is not important, as the primary goal of every person is to focus on work."/></a><div class="content"><a class="title" href="/2023/11/01/ielts-workplace/" title="Establishing good relationships in the workplace is not important, as the primary goal of every person is to focus on work.">Establishing good relationships in the workplace is not important, as the primary goal of every person is to focus on work.</a><time datetime="2023-11-01T01:46:03.000Z" title="發表於 2023-11-01 09:46:03">2023-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/31/ielts-job/" title="In many countries there is a shortage of suitable people for essential jobs. What do you think are the causes of this problem and what measures could be taken to solve it?"><img src= "/img/loading.gif" data-lazy-src="/2023/10/31/ielts-job/Job.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="In many countries there is a shortage of suitable people for essential jobs. What do you think are the causes of this problem and what measures could be taken to solve it?"/></a><div class="content"><a class="title" href="/2023/10/31/ielts-job/" title="In many countries there is a shortage of suitable people for essential jobs. What do you think are the causes of this problem and what measures could be taken to solve it?">In many countries there is a shortage of suitable people for essential jobs. What do you think are the causes of this problem and what measures could be taken to solve it?</a><time datetime="2023-10-31T01:35:36.000Z" title="發表於 2023-10-31 09:35:36">2023-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/30/ielts-instagram/" title="The bar chart below shows the popularity of well-known Instagram accounts in 2018 and 2021."><img src= "/img/loading.gif" data-lazy-src="/2023/10/30/ielts-instagram/Instagram_influencers.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The bar chart below shows the popularity of well-known Instagram accounts in 2018 and 2021."/></a><div class="content"><a class="title" href="/2023/10/30/ielts-instagram/" title="The bar chart below shows the popularity of well-known Instagram accounts in 2018 and 2021.">The bar chart below shows the popularity of well-known Instagram accounts in 2018 and 2021.</a><time datetime="2023-10-29T16:29:56.000Z" title="發表於 2023-10-30 00:29:56">2023-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/27/ielts-advertising/" title="In their advertising, business nowadays usually emphasize that their products are new in some way. Why is this?"><img src= "/img/loading.gif" data-lazy-src="/2023/10/27/ielts-advertising/Advertising.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="In their advertising, business nowadays usually emphasize that their products are new in some way. Why is this?"/></a><div class="content"><a class="title" href="/2023/10/27/ielts-advertising/" title="In their advertising, business nowadays usually emphasize that their products are new in some way. Why is this?">In their advertising, business nowadays usually emphasize that their products are new in some way. Why is this?</a><time datetime="2023-10-27T04:27:39.000Z" title="發表於 2023-10-27 12:27:39">2023-10-27</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>最新評論</span></div><div class="aside-list"><span>正在載入中...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分類</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Course/"><span class="card-category-list-name">Course</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/English/"><span class="card-category-list-name">English</span><span class="card-category-list-count">14</span></a></li>
+            </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>網站資訊</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章數目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">已執行時間 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-09-30T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站總字數 :</div><div class="item-count">6k</div></div><div class="webinfo-item"><div class="item-name">本站訪客數 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站總訪問量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最後更新時間 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-01T03:03:49.128Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div><div class="card-widget user-map" id="user-map"><div class="item-headline"><i class="fas fa-heartbeat"></i><span>訪客地圖</span></div><div class="item-content"><script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=N6wFz6FmR99_Xx1t3I-uk6jTsyQQBDljhPBTlg1U7G8"></script></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Erik Ho</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["Don't count the day. Make the day counts."])
+  } else {
+    document.getElementById("subtitle").textContent = "Don't count the day. Make the day counts."
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[圖片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[連結]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[程式碼]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const findTrueUrl = (array) => {
+    Promise.all(array.map(item =>
+      fetch(item.url).then(resp => resp.json()).then(data => {
+        const urlArray = data.body.match(/(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/ig)
+        if (data.user.login === 'utterances-bot') {
+          return urlArray.pop()
+        } else {
+          return urlArray.shift()
+        }
+      })
+    )).then(res => {
+        array = array.map((i,index)=> {
+          return {
+            ...i,
+            url: res[index]
+          }
+        })
+
+        saveToLocal.set('github-newest-comments', JSON.stringify(array), 10/(60*24))
+        generateHtml(array)
+    });
+  }
+
+  const getComment = () => {
+    fetch('https://api.github.com/repos/erik1110/erik1110.github.io/issues/comments?sort=updated&direction=desc&per_page=6&page=1',{
+      "headers": {
+        Accept: 'application/vnd.github.v3.html+json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        const githubArray = data.map(item => {
+          return {
+            'avatar': item.user.avatar_url,
+            'content': changeContent(item.body_html),
+            'nick': item.user.login,
+            'url': item.issue_url,
+            'date': item.updated_at,
+            'githubUrl': item.html_url
+          }
+        })
+        findTrueUrl(githubArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "無法獲取評論，請確認相關配置是否正確"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '沒有評論'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('github-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/calendar.js"></script><script src="/js/languages.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
