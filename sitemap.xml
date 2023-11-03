@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://erik1110.github.io/2023/11/03/ielts-education/</loc>
+    
+    <lastmod>2023-11-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://erik1110.github.io/2023/11/03/python-supervisor/</loc>
     
     <lastmod>2023-11-03</lastmod>
@@ -38,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/categories/index.html</loc>
+    <loc>https://erik1110.github.io/about/index.html</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -47,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/about/index.html</loc>
+    <loc>https://erik1110.github.io/categories/index.html</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -74,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/2023/10/26/ielts-tourism/</loc>
+    <loc>https://erik1110.github.io/2023/10/16/ielts-television/</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -83,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/2023/10/16/ielts-television/</loc>
+    <loc>https://erik1110.github.io/2023/10/26/ielts-tourism/</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -110,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/2023/10/18/ielts-sugar/</loc>
+    <loc>https://erik1110.github.io/2023/10/23/ielts-recycling/</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -119,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/2023/10/23/ielts-recycling/</loc>
+    <loc>https://erik1110.github.io/2023/10/18/ielts-sugar/</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -228,14 +237,14 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/tags/Task1/</loc>
+    <loc>https://erik1110.github.io/tags/Assignment/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/tags/Assignment/</loc>
+    <loc>https://erik1110.github.io/tags/Task1/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
