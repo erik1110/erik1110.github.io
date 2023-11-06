@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://erik1110.github.io/2023/11/06/ielts-immigrant/</loc>
+    
+    <lastmod>2023-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.github.io/2023/11/05/ielts-exports/</loc>
+    
+    <lastmod>2023-11-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://erik1110.github.io/2023/11/03/ielts-education/</loc>
     
     <lastmod>2023-11-03</lastmod>
@@ -65,15 +83,6 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/2023/10/16/ielts-water/</loc>
-    
-    <lastmod>2023-11-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://erik1110.github.io/2023/11/01/ielts-workplace/</loc>
     
     <lastmod>2023-11-01</lastmod>
@@ -83,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/2023/10/16/ielts-television/</loc>
+    <loc>https://erik1110.github.io/2023/10/16/ielts-water/</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -93,6 +102,15 @@
   
   <url>
     <loc>https://erik1110.github.io/2023/10/26/ielts-tourism/</loc>
+    
+    <lastmod>2023-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.github.io/2023/10/16/ielts-television/</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -202,71 +220,71 @@
 
   <url>
     <loc>https://erik1110.github.io/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://erik1110.github.io/tags/%E8%AA%B2%E7%A8%8B/</loc>
-    <lastmod>2023-11-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://erik1110.github.io/tags/%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/</loc>
-    <lastmod>2023-11-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://erik1110.github.io/tags/IELTS/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://erik1110.github.io/tags/Task2/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <lastmod>2023-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.github.io/tags/%E8%AA%B2%E7%A8%8B/</loc>
+    <lastmod>2023-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.github.io/tags/%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/</loc>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://erik1110.github.io/tags/Assignment/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://erik1110.github.io/tags/Task1/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://erik1110.github.io/tags/python/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://erik1110.github.io/tags/flask/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://erik1110.github.io/tags/supervisor/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -274,22 +292,22 @@
 
   
   <url>
-    <loc>https://erik1110.github.io/categories/Course/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <loc>https://erik1110.github.io/categories/English/</loc>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/categories/English/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <loc>https://erik1110.github.io/categories/Course/</loc>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://erik1110.github.io/categories/Python/</loc>
-    <lastmod>2023-11-03</lastmod>
+    <lastmod>2023-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
