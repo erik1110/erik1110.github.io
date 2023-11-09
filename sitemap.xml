@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/about/index.html</loc>
+    <loc>https://erik1110.github.io/categories/index.html</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/categories/index.html</loc>
+    <loc>https://erik1110.github.io/about/index.html</loc>
     
     <lastmod>2023-11-01</lastmod>
     
@@ -254,20 +254,6 @@
 
   
   <url>
-    <loc>https://erik1110.github.io/tags/%E8%AA%B2%E7%A8%8B/</loc>
-    <lastmod>2023-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://erik1110.github.io/tags/%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/</loc>
-    <lastmod>2023-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://erik1110.github.io/tags/IELTS/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -283,6 +269,20 @@
   
   <url>
     <loc>https://erik1110.github.io/tags/Task1/</loc>
+    <lastmod>2023-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.github.io/tags/%E8%AA%B2%E7%A8%8B/</loc>
+    <lastmod>2023-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.github.io/tags/%E5%BE%8C%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -319,14 +319,14 @@
 
   
   <url>
-    <loc>https://erik1110.github.io/categories/Course/</loc>
+    <loc>https://erik1110.github.io/categories/English/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/categories/English/</loc>
+    <loc>https://erik1110.github.io/categories/Course/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
