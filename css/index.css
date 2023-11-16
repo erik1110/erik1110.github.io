@@ -2670,7 +2670,20 @@ h1.page-title + .tag-cloud-list {
 }
 #aside-content .card-tag-cloud a {
   display: inline-block;
-  padding: 0 4px;
+  margin: 0.2rem 0.6rem 0.2rem 0;
+  padding: 0 0.4rem;
+  width: fit-content;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #f76b61;
+  border-radius: 0.8rem;
+  background: #f76b61;
+  color: #fff !important;
+  font-size: 14px !important;
 }
 #aside-content .card-tag-cloud a:hover {
   color: #49b1f5 !important;
