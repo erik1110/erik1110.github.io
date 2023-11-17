@@ -376,6 +376,6 @@
       url: '/calendar.json'
     };
     $(document).ready(function () {
-        $('#calendar').aCalendar('zh-TW');
+        $('#calendar').aCalendar('en');
     });
   }(jQuery));
