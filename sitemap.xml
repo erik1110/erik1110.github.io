@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://erik1110.github.io/2023/10/21/ielts-environment/</loc>
+    
+    <lastmod>2023-12-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://erik1110.github.io/2023/12/06/ielts-living/</loc>
     
     <lastmod>2023-12-07</lastmod>
@@ -281,15 +290,6 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/2023/10/21/ielts-environment/</loc>
-    
-    <lastmod>2023-11-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://erik1110.github.io/2023/11/03/ielts-education/</loc>
     
     <lastmod>2023-11-29</lastmod>
@@ -479,13 +479,6 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/tags/Both-Views/</loc>
-    <lastmod>2023-12-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://erik1110.github.io/tags/Bar-Chart/</loc>
     <lastmod>2023-12-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -493,7 +486,7 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/tags/Pie-Chart/</loc>
+    <loc>https://erik1110.github.io/tags/Both-Views/</loc>
     <lastmod>2023-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -501,6 +494,13 @@
   
   <url>
     <loc>https://erik1110.github.io/tags/Table/</loc>
+    <lastmod>2023-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.github.io/tags/Pie-Chart/</loc>
     <lastmod>2023-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -542,20 +542,6 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/tags/Emoji/</loc>
-    <lastmod>2023-12-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://erik1110.github.io/tags/%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F/</loc>
-    <lastmod>2023-12-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://erik1110.github.io/tags/python/</loc>
     <lastmod>2023-12-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -571,6 +557,20 @@
   
   <url>
     <loc>https://erik1110.github.io/tags/supervisor/</loc>
+    <lastmod>2023-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.github.io/tags/Emoji/</loc>
+    <lastmod>2023-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.github.io/tags/%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F/</loc>
     <lastmod>2023-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -593,14 +593,14 @@
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/categories/Social/</loc>
+    <loc>https://erik1110.github.io/categories/Python/</loc>
     <lastmod>2023-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://erik1110.github.io/categories/Python/</loc>
+    <loc>https://erik1110.github.io/categories/Social/</loc>
     <lastmod>2023-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
