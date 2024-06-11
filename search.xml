@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>Linux 建立防火牆的兩種方式</title>
+      <link href="/2024/06/11/linux-firewall/"/>
+      <url>/2024/06/11/linux-firewall/</url>
+      
+        <content type="html"><![CDATA[<img src="/2024/06/11/linux-firewall/Linux-Firewall.webp" class><h2 id="防火牆設定"><a href="#防火牆設定" class="headerlink" title="防火牆設定"></a>防火牆設定</h2><p>在 Ubuntu，linux 可以用 ufw 或是 iptables 來進行設定。<br>這裡記錄指令和分享一下我遇到的雷坑🤣</p><h3 id="UFW"><a href="#UFW" class="headerlink" title="UFW"></a>UFW</h3><ul><li>查看防火牆設定  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure></li><li>新增防火牆  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># allow ssh</span><br><span class="line">sudo ufw allow ssh</span><br><span class="line"># allow specific ip to specific port</span><br><span class="line">sudo ufw allow from 123.123.123.123 to any port 22/tcp</span><br></pre></td></tr></table></figure></li><li>列出防火牆規則的編號  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw status numbered</span><br></pre></td></tr></table></figure>  例如  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@localhost:~# sudo ufw status numbered</span><br><span class="line">Status: active</span><br><span class="line"></span><br><span class="line">    To                         Action      From</span><br><span class="line">    --                         ------      ----</span><br><span class="line">[ 1] 80/tcp                     ALLOW IN    Anywhere</span><br><span class="line">[ 2] 443/tcp                    ALLOW IN    Anywhere</span><br><span class="line">[ 3] 22/tcp                     ALLOW IN    123.123.123.123</span><br><span class="line">[ 4] 22/tcp                     ALLOW IN    123.123.123.124</span><br><span class="line">[ 5] 443/tcp (v6)               ALLOW IN    Anywhere (v6)</span><br><span class="line">[ 6] 80/tcp (v6)                ALLOW IN    Anywhere (v6)</span><br></pre></td></tr></table></figure></li><li>刪除特定規則  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw delete [編號]</span><br></pre></td></tr></table></figure></li><li>重載規則  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure></li><li>啟用&#x2F;停用規則  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw enable</span><br><span class="line">sudo ufw disable</span><br></pre></td></tr></table></figure></li></ul><h3 id="IPTABLES"><a href="#IPTABLES" class="headerlink" title="IPTABLES"></a>IPTABLES</h3><p>如果你用 ufw 加上 22 port 規則，可以查看以下指令，但最終還是要看 sudo iptables -L INPUT -n –line-number 有沒有這條規則</p><ul><li>查看 22 port：<br>如果你用 ufw 加上 22 port 規則，可以查看以下指令  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo iptables -L -n | grep :22</span><br><span class="line">ACCEPT     tcp  --  123.123.123.123      0.0.0.0/0            tcp dpt:22</span><br><span class="line">ACCEPT     tcp  --  123.123.123.124      0.0.0.0/0            tcp dpt:22</span><br></pre></td></tr></table></figure></li><li>查看 input 規則   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo iptables -L INPUT -n --line-number</span><br></pre></td></tr></table></figure><ul><li>機器一  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@localhost:~# sudo iptables -L INPUT -n --line-number</span><br><span class="line">Chain INPUT (policy DROP)</span><br><span class="line">num  target     prot opt source               destination</span><br><span class="line">1    ufw-before-logging-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">2    ufw-before-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">3    ufw-after-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">4    ufw-after-logging-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">5    ufw-reject-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">6    ufw-track-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">7    ACCEPT     tcp  --  123.123.123.123        0.0.0.0/0            tcp dpt:22</span><br><span class="line">8    DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22</span><br></pre></td></tr></table></figure></li><li>機器二  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@localhost:~#  sudo iptables -L INPUT -n --line-number</span><br><span class="line">Chain INPUT (policy DROP)</span><br><span class="line">num  target     prot opt source               destination</span><br><span class="line">1    ACCEPT     tcp  --  123.123.123.123       0.0.0.0/0            tcp dpt:22</span><br><span class="line">2    ACCEPT     tcp  --  123.123.123.124        0.0.0.0/0           tcp dpt:22</span><br><span class="line">3    f2b-sshd   tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 22</span><br><span class="line">4    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:80</span><br><span class="line">5    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:443</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li></ul></li><li>寫入 input 規則  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo iptables -A INPUT -p tcp -s 123.123.123.123 --dport 22 -j ACCEPT</span><br></pre></td></tr></table></figure></li><li>刪除 input 規則  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo iptables -D INPUT &lt;line-number&gt;</span><br></pre></td></tr></table></figure></li></ul><h3 id="實際處理心得"><a href="#實際處理心得" class="headerlink" title="實際處理心得"></a>實際處理心得</h3><p>這篇的緣由是公司的其他團隊遇到駭客，主要是沒有設定防火牆和密碼複雜度低導致被駭。因此我想說來增加一下資訊安全，限制 22 port 的連線白名單，但不料不熟悉指令遇到的小雷坑。<br>基本上加上防火牆的白名單應該滿夠使用，如果不是內部人員，應該就沒辦法取得特定 IP。(如果有其他更好的方法歡迎交流😆)</p><p>由於我在機器一設定好 ufw，<br>使用  <code>sudo ufw allow from [IP] to any port 22/tcp</code> 加入白名單，<br>亦確認 <code>sudo iptables -L -n | grep :22</code> 有顯示我的 IP 地址，<br>因此在機器一可以用特定 IP 登入機器來增加機器安全。我在機器二如法炮製卻遇到問題，屢次發現無法登入自己的 IP (駭客還沒登入，自己先登入不了XD)。</p><p>主要的原因其實就是機器二根本沒有將 ufw 規則丟到 iptables，因此 ufw 怎麼設定都沒有辦法成功啟用(或是你可能要重新安裝一次 ufw)。<br>我最後的解法是直接用 iptables 加入白名單方式，確認有寫入 iptables<br><code>sudo iptables -A INPUT -p tcp -s 123.123.123.123 --dport 22 -j ACCEPT</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Backend </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> firewall </tag>
+            
+            <tag> ufw </tag>
+            
+            <tag> iptables </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>過版筆記</title>
+      <link href="/2024/06/05/dev-steps/"/>
+      <url>/2024/06/05/dev-steps/</url>
+      
+        <content type="html"><![CDATA[<h2 id="架構"><a href="#架構" class="headerlink" title="架構"></a>架構</h2><ol><li>該服務是用前後端 python fastapi 架設，包含</li></ol><ul><li>前端網頁</li><li>後台網站</li><li>後端服務</li></ul><ol start="2"><li>後端提供給 APP 端進行操作，有 CRUD 和 websocket 等操作，該平台亦提供第三方登入。</li></ol><h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><p>需要從將服務從機器A搬遷至機器B，會須申請的 domain，而舊的 domain 也要可以使用，不影響原有使用者。</p><h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p>TBC</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Backend </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>The maps below show an industrial area in the town of Norbiton, and planned future development of the site.</title>
       <link href="/2024/02/16/ielts-future-development/"/>
       <url>/2024/02/16/ielts-future-development/</url>
@@ -117,9 +167,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -148,9 +198,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -210,9 +260,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -361,9 +411,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Causes and Results </tag>
             
@@ -483,9 +533,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Problem-Solution </tag>
             
@@ -574,9 +624,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -754,9 +804,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Problem-Solution </tag>
             
@@ -785,9 +835,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -934,9 +984,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -965,9 +1015,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1085,11 +1135,11 @@
             
             <tag> IELTS </tag>
             
+            <tag> Assignment </tag>
+            
             <tag> Task2 </tag>
             
             <tag> Both View </tag>
-            
-            <tag> Assignment </tag>
             
         </tags>
       
@@ -1147,9 +1197,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1169,7 +1219,7 @@
       
       <categories>
           
-          <category> Python </category>
+          <category> Backend </category>
           
       </categories>
       
@@ -1238,9 +1288,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1329,9 +1379,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -1389,9 +1439,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -1627,9 +1677,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1658,9 +1708,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
