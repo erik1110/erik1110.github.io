@@ -618,13 +618,6 @@
   </url>
   
   <url>
-    <loc>https://erik1110.com/tags/Both-View/</loc>
-    <lastmod>2024-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://erik1110.com/tags/Opinion/</loc>
     <lastmod>2024-07-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -640,6 +633,13 @@
   
   <url>
     <loc>https://erik1110.com/tags/Mixed/</loc>
+    <lastmod>2024-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://erik1110.com/tags/Both-View/</loc>
     <lastmod>2024-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
