@@ -1,0 +1,1763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Leetcode 735 Asteroid Collision</title>
+      <link href="/2025/01/21/leetcode-735/"/>
+      <url>/2025/01/21/leetcode-735/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/asteroid-collision">Link</a></p><p>We can use a stack to solve this problem.  </p><p>From the problem description, the planets move at the same speed, so we only need to consider their direction and size.<br>Whether two planets will collide and the result of the collision can be divided into three cases:  </p><ol><li><p><code>asteroids = [5, 10]</code> or <code>asteroids = [-5, -10]</code>  </p><ul><li>Both planets move in the same direction, so no collision occurs.</li></ul></li><li><p><code>asteroids = [-5, 10]</code>  </p><ul><li>The two planets move in different directions but will not collide.</li></ul></li><li><p><code>asteroids = [5, -10]</code>  </p><ul><li>The two planets move in opposite directions and will collide.</li></ul></li></ol><p>Collisions can be further divided into two outcomes:  </p><ol><li><p><strong>Different sizes:</strong> The larger planet will remain.<br>Example: <code>asteroids = [5, -10]</code> → <code>asteroids = [-10]</code>  </p></li><li><p><strong>Same size:</strong> Both planets will disappear.<br>Example: <code>asteroids = [8, -8]</code> → <code>asteroids = []</code></p></li></ol><p>Thus, we only need to focus on cases where “two planets move in opposite directions and collide.”  </p><p>We iterate through each planet, add it to the stack, and use the stack to determine whether the planet should remain or be removed based on the conditions above.  </p><p>Here’s the solution in Python:  </p><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">asteroidCollision</span>(<span class="params">self, asteroids</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type asteroids: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        stack = []</span><br><span class="line">        <span class="keyword">for</span> star <span class="keyword">in</span> asteroids:</span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> star &lt; <span class="number">0</span> <span class="keyword">and</span> stack[-<span class="number">1</span>] &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">abs</span>(star) &gt; <span class="built_in">abs</span>(stack[-<span class="number">1</span>]):</span><br><span class="line">                    stack.pop()</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">elif</span> <span class="built_in">abs</span>(star) == <span class="built_in">abs</span>(stack[-<span class="number">1</span>]):</span><br><span class="line">                    stack.pop()</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                stack.append(star)</span><br><span class="line">        <span class="keyword">return</span> stack</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Leetcode </tag>
+            
+            <tag> stack </tag>
+            
+            <tag> Leetcode 75 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Cloud Summit 2024 Participation Experience</title>
+      <link href="/2024/07/08/summit-cloud-2024/"/>
+      <url>/2024/07/08/summit-cloud-2024/</url>
+      
+        <content type="html"><![CDATA[<img src="/2024/07/08/summit-cloud-2024/Cloud-Summit-2024.webp" class><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>Attending Cloud Summit for the first time allowed me to gain a deeper understanding of cloud technologies. I am quite happy to see that the industry has many new tools and technologies that simplify complex tasks, continuously pushing the capabilities of Taiwan’s software industry.</p><p>Of course, a speaker who discussed the double-edged nature of the Cloud, highlighting both its advantages and disadvantages. In this era of AI, technological iterations are happening rapidly, but the unchanging principle remains that we must maintain our motivation to learn and embrace new technologies.</p><h2 id="Various-Exhibitors"><a href="#Various-Exhibitors" class="headerlink" title="Various Exhibitors"></a>Various Exhibitors</h2><p>The number of booths at this summit, compared to the SRE Conference I attended a few months ago, was overwhelming, with over 40 booths. I believe this is a good thing for two reasons: firstly, it allows everyone to get to know the latest cloud technologies and broaden their horizons; secondly, it might help us introduce these technologies into our future work environments and understand the latest developments. Most importantly for everyone, the gifts from the exhibitors was plentiful. The best item I received was an universal travel adapter (with a 1&#x2F;9 chance of winning by rolling two red dice).</p><p>One exhibitor directly gave me a phone stand and a swipe card without even needing me to fill out any information (maybe they wanted to distribute their goods quickly and head home?).</p><p>Upon entering, I rushed through 40 booths to swipe cards to get a pink t-shirt in the afternoon (laugh). The exhibitors were proactive in swiping cards, although some required you to share personal information in exchange for a swipe.</p><h2 id="Speech-Insights"><a href="#Speech-Insights" class="headerlink" title="Speech Insights"></a>Speech Insights</h2><h3 id="Exploring-the-Gradually-Lost-Technical-Skills-in-the-Cloud-Native-Era"><a href="#Exploring-the-Gradually-Lost-Technical-Skills-in-the-Cloud-Native-Era" class="headerlink" title="Exploring the Gradually Lost Technical Skills in the Cloud Native Era"></a><a href="https://cloudsummit.ithome.com.tw/2024/session-page/2611">Exploring the Gradually Lost Technical Skills in the Cloud Native Era</a></h3><p>The most recommended topic of this summit was “Exploring the Gradually Lost Technical Skills in the Cloud Native Era” For detailed information, refer to the speaker’s slide <a href="https://speakerdeck.com/hwchiu/exploring-the-gradually-lost-technical-skills-in-the-cloud-native-era">link</a>. Here, I want to share my personal reflections.</p><p>After listening to the speaker, I couldn’t help but reflect that while technological iterations are an inevitable result of technological progress, are we losing essential developer skills in the process?</p><p>Currently, with the rapid development of Cloud and the convenience of Kubernetes (K8S), deploying a complex service has become very easy. This convenience is a benefit but also a drawback, as the speaker mentioned, it’s a double-edged sword. Often, everything works fine, but when issues arise, we might be unable to solve them (YAML often hides some details). The speaker criticized that many might just be YAML engineers. In this era where Cloud is so convenient, one might also be called a Click engineer, deploying complex services with just a few clicks. However, without delving into fundamental knowledge, debugging can be prolonged and misdirected.</p><p>Services that used to take months to develop can now be completed in weeks or even a day. This might give supervisors the illusion that any problem should also be resolved within a few days. But as described above, due to the convenience of deployment, our understanding of the underlying logic might be insufficient, leading to unforeseen problems.</p><p>This issue also extends to the AI level. When using ChatGPT, we might become lazier, skipping developer documentation and directly asking AI. While this isn’t inherently bad, as natural language queries can save us a lot of time searching for code syntax and quickly acquire knowledge, the days of using Stack Overflow and Google keywords are fading. Today’s engineers can quickly get applicable code but might not understand why it works.</p><p>The speaker concluded by emphasizing the importance of fundamental knowledge and continuous learning, such as joining study groups to regularly acquire new knowledge. I strongly agree and believe it remains crucial in this AI era. Fundamental knowledge helps us approach problems from different angles and understand the simplified processes of cloud platforms (one button might execute several scripts).</p><h3 id="Experience-with-Enterprise-level-DevSecOps-Platform-—-Enhancing-Code-Quality-and-Security-Vulnerability-Fixes"><a href="#Experience-with-Enterprise-level-DevSecOps-Platform-—-Enhancing-Code-Quality-and-Security-Vulnerability-Fixes" class="headerlink" title="Experience with Enterprise-level DevSecOps Platform — Enhancing Code Quality and Security Vulnerability Fixes"></a><a href="https://cloudsummit.ithome.com.tw/2024/lab-page/2982">Experience with Enterprise-level DevSecOps Platform — Enhancing Code Quality and Security Vulnerability Fixes</a></h3><p>I have previously heard of DevOps and applied it in workflow, but as information security has gained more attention in recent years, DevSecOps has also become increasingly important among engineers (Sec stands for Security).</p><p>Applying this platform in actual work would be very convenient. This product integrates CICD processes with vulnerability scanning and allows registration to replace multiple platform accounts (as it integrates third-party services like GitLab, SonarQube, etc.). The selling point is that it can use AI to fix issues detected by SonarQube, and customization can be done in the YAML file for the degree of fixes. Of course, AI-generated code might still have significant issues, highlighting the importance of “unit testing”, ensuring AI-fixed code passes these tests.</p><p>However, this convenient platform somewhat contradicts the previous recommended speech. If a company adopts such a convenient platform, developers still need basic domain knowledge to handle it and avoid being clueless when problems arise.</p><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Recently, our company is also looking to adopt CICD processes, so this summit was a great opportunity to learn new concepts and hear industry perspectives and exchanges. Overall, I found the summit quite rewarding, despite not getting a lunch voucher in the morning (the announcement said to come before 8:30 to get a lunch voucher, but I arrived at 8:15, and the queue was unexpectedly long).</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Backend </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ithome </tag>
+            
+            <tag> cloud-summit </tag>
+            
+            <tag> experience </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Two Ways to Set Up a Firewall in Linux</title>
+      <link href="/2024/06/11/linux-firewall/"/>
+      <url>/2024/06/11/linux-firewall/</url>
+      
+        <content type="html"><![CDATA[<img src="/2024/06/11/linux-firewall/Linux-Firewall.webp" class><h2 id="Firewall-Configuration"><a href="#Firewall-Configuration" class="headerlink" title="Firewall Configuration"></a>Firewall Configuration</h2><p>On Ubuntu Linux, you can use ufw or iptables for firewall configuration. Here are the commands and some pitfalls I encountered along the way. 🤣</p><h3 id="UFW"><a href="#UFW" class="headerlink" title="UFW"></a>UFW</h3><ul><li>View firewall settings  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure></li><li>Add firewall rules  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># allow ssh</span><br><span class="line">sudo ufw allow ssh</span><br><span class="line"># allow specific ip to specific port</span><br><span class="line">sudo ufw allow from 123.123.123.123 to any port 22/tcp</span><br></pre></td></tr></table></figure></li><li>List firewall rules with numbers  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw status numbered</span><br></pre></td></tr></table></figure>  Example  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@localhost:~# sudo ufw status numbered</span><br><span class="line">Status: active</span><br><span class="line"></span><br><span class="line">    To                         Action      From</span><br><span class="line">    --                         ------      ----</span><br><span class="line">[ 1] 80/tcp                     ALLOW IN    Anywhere</span><br><span class="line">[ 2] 443/tcp                    ALLOW IN    Anywhere</span><br><span class="line">[ 3] 22/tcp                     ALLOW IN    123.123.123.123</span><br><span class="line">[ 4] 22/tcp                     ALLOW IN    123.123.123.124</span><br><span class="line">[ 5] 443/tcp (v6)               ALLOW IN    Anywhere (v6)</span><br><span class="line">[ 6] 80/tcp (v6)                ALLOW IN    Anywhere (v6)</span><br></pre></td></tr></table></figure></li><li>Delete a specific rule  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw delete [number]</span><br></pre></td></tr></table></figure></li><li>Reload rules  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure></li><li>Enable&#x2F;disable rules  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw enable</span><br><span class="line">sudo ufw disable</span><br></pre></td></tr></table></figure></li></ul><h3 id="IPTABLES"><a href="#IPTABLES" class="headerlink" title="IPTABLES"></a>IPTABLES</h3><p>If you add a rule for port 22 using ufw, you can verify it with the following commands. However, you should ultimately check <code>sudo iptables -L INPUT -n --line-number</code> to ensure the rule is present.</p><ul><li>View rules for port 22<br>  If you added a rule for port 22 using ufw, you can verify it with  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo iptables -L -n | grep :22</span><br><span class="line">ACCEPT     tcp  --  123.123.123.123      0.0.0.0/0            tcp dpt:22</span><br><span class="line">ACCEPT     tcp  --  123.123.123.124      0.0.0.0/0            tcp dpt:22</span><br></pre></td></tr></table></figure></li><li>View input rules  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo iptables -L INPUT -n --line-number</span><br></pre></td></tr></table></figure><ul><li>Machine 1  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@localhost:~# sudo iptables -L INPUT -n --line-number</span><br><span class="line">Chain INPUT (policy DROP)</span><br><span class="line">num  target     prot opt source               destination</span><br><span class="line">1    ufw-before-logging-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">2    ufw-before-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">3    ufw-after-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">4    ufw-after-logging-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">5    ufw-reject-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">6    ufw-track-input  all  --  0.0.0.0/0            0.0.0.0/0</span><br><span class="line">7    ACCEPT     tcp  --  123.123.123.123        0.0.0.0/0            tcp dpt:22</span><br><span class="line">8    DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22</span><br></pre></td></tr></table></figure></li><li>Machine 2  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root@localhost:~#  sudo iptables -L INPUT -n --line-number</span><br><span class="line">Chain INPUT (policy DROP)</span><br><span class="line">num  target     prot opt source               destination</span><br><span class="line">1    ACCEPT     tcp  --  123.123.123.123       0.0.0.0/0            tcp dpt:22</span><br><span class="line">2    ACCEPT     tcp  --  123.123.123.124        0.0.0.0/0           tcp dpt:22</span><br><span class="line">3    f2b-sshd   tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 22</span><br><span class="line">4    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:80</span><br><span class="line">5    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:443</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li></ul></li><li>Add input rule  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo iptables -A INPUT -p tcp -s 123.123.123.123 --dport 22 -j ACCEPT</span><br></pre></td></tr></table></figure></li><li>Delete input rule  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo iptables -D INPUT &lt;line-number&gt;</span><br></pre></td></tr></table></figure></li></ul><h3 id="Practical-Insights"><a href="#Practical-Insights" class="headerlink" title="Practical Insights"></a>Practical Insights</h3><p>This post originated because another team at our company experienced a hack due to lack of firewall settings and weak password complexity. To enhance information security, I decided to restrict access to port 22 to a whitelist of IPs. However, I encountered some pitfalls due to unfamiliarity with the commands.</p><p>Generally, adding a firewall whitelist should suffice. If you’re not an internal staff member, you shouldn’t be able to access the specific IPs (feel free to share better methods 😆).</p><p>On Machine 1, after setting up ufw using:</p><p><code>sudo ufw allow from [IP] to any port 22/tcp</code></p><p>I verified with</p><p><code>sudo iptables -L -n | grep :22</code></p><p>that my IP address was displayed. Therefore, on Machine 1, I could log in using the specific IP, enhancing machine security. However, applying the same method on Machine 2 resulted in issues where I couldn’t log in with my IP (hacker didn’t log in, but I couldn’t either XD).</p><p>The main reason was that Machine 2 didn’t apply the ufw rules to iptables. Therefore, no matter how I set up ufw, it didn’t work (or you might need to reinstall ufw).</p><p>My final solution was to directly add the whitelist using iptables, ensuring it was written to iptables<br><code>sudo iptables -A INPUT -p tcp -s 123.123.123.123 --dport 22 -j ACCEPT</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Backend </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> firewall </tag>
+            
+            <tag> ufw </tag>
+            
+            <tag> iptables </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The maps below show an industrial area in the town of Norbiton, and planned future development of the site.</title>
+      <link href="/2024/02/16/ielts-future-development/"/>
+      <url>/2024/02/16/ielts-future-development/</url>
+      
+        <content type="html"><![CDATA[<img src="/2024/02/16/ielts-future-development/Development.png" class><p>The two maps illustrate the variation in Norbiton town, showing the current industrial usage and the proposed future refurbishment of the area.</p><p>Overall, it is evident that there will be more accommodations and numerous facilities replacing the factories in the town.</p><p>Upon closer examination of the maps, many factories are situated along the routes, and there are still significant unused spaces. These factories will be replaced by a plethora of new apartments or flats to accommodate the rising population. Additionally, various amenities will be planned to cater to multiple needs, including shops, a medical center, a playground, and an educational establishment. With more routes and pathways, these facilities will be more accessible to citizens.</p><p>Moreover, the maps also imply that a new bridge will be constructed across the river to provide an alternative route for individuals. The construction of a new bridge is expected to enhance convenience for residents in the northern farmland.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Map </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>It is important for people to take risks, both in their professional lives and their personal lives.</title>
+      <link href="/2024/02/15/ielts-risk/"/>
+      <url>/2024/02/15/ielts-risk/</url>
+      
+        <content type="html"><![CDATA[<p>Do you think the advantages of taking risks outweigh the disadvantages?</p><img src="/2024/02/15/ielts-risk/Risk.webp" class><p>Risk evaluation is a crucial aspect of decision-making, as uncertainty about the future often leads to feelings of unease and confusion. While some people argue taking risks could have adverse effects on one’s life, others contend that the benefits outweigh the drawbacks. In this essay, I am favor of risk-taking and I will illustrate its pros outweigh its drawbacks.</p><p>To begin with, taking risks can significantly impact one’s career path positively. To be specific, stagnant wages and inflation make it essential for individuals to seek opportunities beyond their comfort zones. For example, careers in fields such as software engineering are often sought after for their high pay and prestigious titles. Exploring such career paths allows individuals to discover their potential and maximize their earning potential, especially at a young age.</p><p>Furthermore, it is crucial for people to invest stocks or bonds rather than solely relying on savings in the bank for one’s financial plan. Investment is imperative since money can be accumulated by compound interests, which make you fulfill your personal dreams or reach financial goal quickly. Without taking on some level of risk, significant financial gains are unlikely to materialize.</p><p>However, there are still some drawbacks in both professional careers and personal lives. Firstly, some people may feel anxious and depressed when stepping out comfort zones. Secondly, the unpredictability of the stock market poses a risk of substantial financial loss. One possible solution to mitigate these risks is to thoroughly research and prepare before making any significant decisions, as knowledge and preparation can help reduce the likelihood of adverse outcomes.</p><p>In conclusion, lives are replete of uncertainty and opportunities, urging us to seize chances for better employment and wealth accumulation. I firmly believe prioritizing risk assessment empowers us to navigate these pathways toward a more fulfilling lifestyle.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Pros and Cons </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The table and charts below give information on the police budget for 2017 and 2018 in one area of Britain. The table shows where the money came from and the charts show how it was distributed.</title>
+      <link href="/2024/02/01/ielts-police/"/>
+      <url>/2024/02/01/ielts-police/</url>
+      
+        <content type="html"><![CDATA[<img src="/2024/02/01/ielts-police/Police.png" class><p>The table and charts demonstrate a comprehensive overview of the police budget in a specific area of Britain during 2017 to 2018. The first table illustrates the sources of subsidy, while the pie charts depict that the allocation of funds across different categories.</p><p>Overall, an upward trend was witnessed in each source of the police budget. It is evident that the largest proportion of funding was allocated to officers and staff salaries.</p><p>Examining the table more closely, funding originated from various sources, including the national government, local taxes and other sources. The funds from the national government was predominant, totaling £175.5 million in 2017 and £177.8 million in 2018, accounting for over 50% of the budget. In contrast, local taxes contributed £91.2 million and 38 million from other sources in 2017.</p><p>In terms of pie chart, it is apparent that the majority of the subsidy was directed towards salaries, with 75% in 2017 and 69% in 2018. Technology’s rate was on the rise since it increased 6% during this period. Interestingly, the ratio of buildings and transport still remained at 17%.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Mixed </tag>
+            
+            <tag> Pie Chart </tag>
+            
+            <tag> Table </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Some children spend hours every day on their smartphones.</title>
+      <link href="/2024/01/28/ielts-smartphone/"/>
+      <url>/2024/01/28/ielts-smartphone/</url>
+      
+        <content type="html"><![CDATA[<p>Why is this the case? Do you think this is a positive or a negative development?</p><img src="/2024/01/28/ielts-smartphone/Smartphone.webp" class><p>With the advent of modern technology, kids are inclined to immerse themselves in digital world than ever before. While some people argue that it is beneficial to our children, others contend it could have adverse impacts on their development. I am in favor of the latter, and I will illustrate the root causes and my personal opinion in the essay.</p><p>Advanced technology has significantly reshaped human behaviors and lifestyles. Growing up in a digital environment, our children are inclined to spend the majority of their time on electronic devices. Firstly, numerous learning materials and knowledge are conveyed and used via electronic mediums, such as e-books and YouTube videos. Moreover, more and more communities and forums are built on social media, including Facebook, Instagram and TikTok. Children are addicted to these platforms because they want to follow the latest treads and socialize with peers.</p><p>In my opinion, obsessing with the screens have several negative effects on humans. To begin with, studies have shown that prolonged usage of mobile phones can contribute to nearsightedness or eye diseases. It is imperative for parents and educators to implement measures for managing screen time to mitigate the risk of these disorders. Furthermore, students who are indulged in smartphones usage may be susceptible to obesity and related health concerns, as lack of physical activities and sedentary lifestyles are among most common health issues worldwide. Last but not least, interpersonal relationships could also be influenced because children are likely to engage with their phones rather than spending quality time with friends.</p><p>In conclusion, smartphones have revolutionized various aspects of our lives, including education and social interactions. However, the excessive reliance of youngsters on these devices can have multifaceted consequences, such as vision disorders, obesity, and alienation. I firmly believe that we should restrict children’s phones usage to some extent.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>In the future all cars, buses, and trucks will be driverless. The only people traveling inside these vehicles will be passengers.</title>
+      <link href="/2024/01/25/ielts-driverless/"/>
+      <url>/2024/01/25/ielts-driverless/</url>
+      
+        <content type="html"><![CDATA[<p>Do you think the advantages of driverless vehicles outweigh the disadvantages?</p><img src="/2024/01/25/ielts-driverless/Car.jpeg" class><p>Self-driving is one of most prevalent technology integrating with artificial intelligence since individuals have always pursed more convenient lifestyles. While some people argue that driverless vehicles have drawbacks, others support their development. I am favor of the latter with three benefits and I will illustrate that pros outweigh its drawbacks in the essay.</p><p>On the one hand, self-driving vehicles are beneficial for several reasons. Firstly, multitasking can be realized since people can put more emphasis on their daily routines rather than traffic congestion. It can a have positive impact on commuters since they do not have to waste their time in a tedious traffic jam. Moreover, with the help of machine learning, the best route can be calculated to reduce passengers’ valuable time by autonomous driving system. Last but not least, there would be a decreasing rate of drunk-driving as no one has to drive cars. The government should take measures to promote and subsidize driverless cars since it would lead to fewer criminal rates of alcoholic driving.</p><p>On the other hand, it is undeniable that mistakes could still be made by artificial intelligence since its mechanism and training data come from humans. Fear emerges when car accidents occur, which can make people become untrust on self-driving. The problems can be alleviated by investing more research on machine learning or reinforcement learning techniques on autonomous driving system.</p><p>In my opinion, drawbacks can be overcome by more funding and diligent research. Individuals can enjoy their journeys and enhance their productivity by autopilots.</p><p>In conclusion, self-driving has many advantages, including less wasting time in a traffic congestion, providing the best-route solution, and less drunk-drinking cases. Although the systems are still not perfect nowadays, it could be upgraded and I firmly believe that driverless cars could be dominant in the future vehicle market.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Pros and Cons </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The diagram below the process for recycling plastic bottles.</title>
+      <link href="/2024/01/24/ielts-recycling2/"/>
+      <url>/2024/01/24/ielts-recycling2/</url>
+      
+        <content type="html"><![CDATA[<img src="/2024/01/24/ielts-recycling2/Recycling.png" class><p>The flowchart illustrates how the process of recycling plastic bottles unfolds into several stages.</p><p>Overall, it is evident that the process commences with consumers disposing of their plastic bottles and concludes with the production of various items for consumers.</p><p>Examining the chart more closely, consumers dump their plastic bottles into a giant collection bin, designed to gather recyclable materials. Subsequently, garbage trucks collect these junks and transport them to a recycling center. In this facility, the plastic bottles undergo sorting, compression into blocks, and then shredding by a sophisticated machine. These resulting scraps need to be washed to purify their from dirt or stains.</p><p>After washing, the plastic pellets are fed into another advanced heating machine, which melts the pellet to form raw materials. These ingredients are then collected and stacked on racks. In the final stage, these raw materials can be used to manufacture various products, including plastic bottles, plastic boxes, T-shirts, pencils and plastic bags. These products are then sold to consumers, completing a recycling cycle.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Flowchart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>In some cultures, children are often told that they can achieve anything if they try hard enough.</title>
+      <link href="/2024/01/14/ielts-children/"/>
+      <url>/2024/01/14/ielts-children/</url>
+      
+        <content type="html"><![CDATA[<p>What are the advantages and disadvantages of giving children this message?</p><img src="/2024/01/14/ielts-children/Children.webp" class><p>The education of children is crucial since their personalities and characteristics are typically formed at a young age. Some parents instill in their children the belief that anything can be accomplished through dedication. I am in favor of this concept and will illustrate its pros and cons in the essay.</p><p>To begin with, children may develop a positive attitude towards life. They would understand that talented individuals do not always succeed; success often comes to those who are diligent and have good time management. For instance, if children struggle with their academic scores, parents and teachers can teach them how to learn intelligently and memorize efficiently, encouraging them to explore different study methods and achieve their goals. Studies have shown that those who believe in their potential ability to complete complicated tasks are inclined to lead a healthier mental life.</p><p>In terms of drawbacks, sometimes reality does not align with one’s expectations. There are various paths to success, and the point is that children may not easily know how to reach the finish line without the necessary resources. More specifically, wealthy parents often provide their children with higher education and funds; therefore, their kids tend to have massive opportunities to succeed without much effort. This often creates a disparity that most children cannot compete with, leading to adverse impacts such as anxiety and depression resulting from setbacks and failures.</p><p>In my opinion, this message would not hinder one’s success as one has enough inner ability to confront the setbacks. Parents should help their children to build more confidence to cope with unsettling situations.</p><p>In conclusion, children are highly susceptible to the education they receive from their parents or teachers. It is essential to help them develop a positive mindset and provide a nurturing environment to combat negative feelings. Those who embrace this concept are more likely to start their own businesses or achieve success in the future.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Pros and Cons </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The chart below shows what Anthropology graduates from one university did after finishing their undergraduate degree course. The table shows the salaries of the anthropologists in work after five years.</title>
+      <link href="/2024/01/11/ielts-anthropobiology/"/>
+      <url>/2024/01/11/ielts-anthropobiology/</url>
+      
+        <content type="html"><![CDATA[<p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p><img src="/2024/01/11/ielts-anthropobiology/Anthropobiology.png" class><p>The first pie chart illustrates the post-graduation plans of Anthropobiology students, while the second table provides information on salary distribution in the anthropological industry after five years of work.</p><p>Overall, it is evident that the majority of students opt for full-time jobs compared to other options. It is also noteworthy that anthropologists in freelance consultancy and the government sector tend to earn significantly higher salaries.</p><p>Upon closer examination of the graph, it is clear that the majority of individuals (52%) choose full-time employment, while only 5% opt for part-time work and postgraduate study. The rates for full-time postgraduate study and unknown employment status are both 8%. Unemployment and part-time work have similar percentages, with 15% and 12%, respectively.</p><p>Regarding the table, half of the individuals in the government sector earn more than $100,000, marking the highest rates in the given data. Freelance consultants and government sectors exhibit a similar pattern below $75,000, with 5% in the $25,000 - $49,999 range and 15% in the $50,000 - $74,999 range. In contrast, anthropologists in private companies earn less than the other two types, reaching their highest percentage (35%) in the $50,000 to $74,999 range.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Mixed </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Some people say that advertising is extremely successful at persuading us to buy things. Other people think that advertising is so common that we no longer pay attention to it.</title>
+      <link href="/2024/01/09/ielts-advertising-2/"/>
+      <url>/2024/01/09/ielts-advertising-2/</url>
+      
+        <content type="html"><![CDATA[<p>Discuss both these views and give you own opinions.</p><img src="/2024/01/09/ielts-advertising-2/Advertising.jpeg" class><p>Advertisement is ubiquitous since our lives are packed with different pop-up ads and advertising videos. While some people contend that advertisement is beneficial to companies, others claim that it does not create any marginal values. This essay will discuss both viewpoints and argue in favor of the former.</p><p>On the one hand, ads represent powerful and useful marketing strategies, contributing to exposures and revenue. It is undeniable that successful products are usually promoted through advertisement or celebrity endorsements. For instance, Uber Eats has enlisted a renowned online influencer as their brand ambassador to enhance its presence online and drive new traffic and sales. Moreover, some companies leverage Meta and Google Ads to display relevant banner ads on our browsers to increase more popularity. This can have positive impacts on purchases since potential consumers may be attracted by its appealing ads.</p><p>On the other hand, more exposures do not necessarily lead to more purchasing behavior and sometimes it could have an adverse impact. More specifically, when a Facebook user unintentionally click an advertisement, the recommendation system generates more related ads to pop up repeatedly, which can sometimes be annoying and obnoxious. This not only leaves a negative lasting impression on consumers but it usually makes users to ignore advertisements.</p><p>From my perspective, embracing ads has brought plenty of benefits to its revenue. The adverting providers, such as Facebook and Google, need to improve their recommendation systems and algorithms to meet the market demands.</p><p>In conclusion, although our daily lives are full of various ads and sometimes annoying. It is possible that advertisement can genuinely benefit companies and significantly boost product sales. I firmly believe that the pros outweigh its cons.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Both View </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The diagram below shows how instant noodles are manufactured.</title>
+      <link href="/2024/01/08/ielts-instant-noodles/"/>
+      <url>/2024/01/08/ielts-instant-noodles/</url>
+      
+        <content type="html"><![CDATA[<p>Summaries the information by selecting and reporting the main features, and make comparisons where relevant.</p><img src="/2024/01/08/ielts-instant-noodles/Instant-Noodles.webp" class><p>The diagram below illustrates the several stages of how to produce instant noodles.</p><p>Overall, it is evident that the process commences with storage silos and ends with labeling and sealing.</p><p>Initially, a large amount of flour is stored in large storage silos for ingredients and then is mixed with water and oil in a mixer, which helps them blend together. The flour is rolled out into dough sheets by rollers, and then it is cut into dough strips by a sophisticated machine. Subsequently, dough strips are compressed and transformed into noodle discs. After completing this stage, noodle discs are cooked with oil and then dried, making the noodles tastier and more mouth-watering.</p><p>Numerous cups are prepared for packing instant noodles. Simultaneously, seasonings including vegetables and spices are added to the noodles to enhance their flavor. Ultimately, a brand name and labels are attached to the cups, and then the cups are sealed for hygiene reasons.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Flowchart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The graph below shows the number of tourists visiting a particular Caribbean island between 2010 and 2017.</title>
+      <link href="/2024/01/04/ielts-Caribbean-island/"/>
+      <url>/2024/01/04/ielts-Caribbean-island/</url>
+      
+        <content type="html"><![CDATA[<img src="/2024/01/04/ielts-Caribbean-island/Caribbean.png" class><p>The bar chart depicts how many visitors travel a certain Caribbean Island annually by two primary accommodation styles during 2010 to 2017.</p><p>Overall, it is evident that the popularity of the Caribbean Island increased significantly over the period. While the number of visitors opting for cruise ship accommodations was slightly lower than those choosing island stays initially, the former surpassed the latter by the end of the period.</p><p>Looking at the graph more closely, it is apparent that Caribbean experienced a notable surge in popularity, with 1 million visitors in 2010 and a substantial increase to 3.5 million in 2017. More specifically, a considerable growth occurred during 2012 to 2014, witnessing a staggering increase of 1 million tourists during this interval.</p><p>In terms of traveling methods, an intriguing point emerged with an intersection of approximately 1.7 million visitors between 2015 and 2016. Notably, the influx of cruise ship passengers experienced a noteworthy surge, surging from 0.3 million in 2012 to an impressive 2 million in 2017. Conversely, the number of tourists opting to stay on the island remained constant at 1.5 million from 2013 to 2015.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Line Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>In the future, nobody will buy printed newspapers or books because they will be able to read everything they want online without paying.</title>
+      <link href="/2024/01/03/ielts-book-and-newspaper/"/>
+      <url>/2024/01/03/ielts-book-and-newspaper/</url>
+      
+        <content type="html"><![CDATA[<p>To what extent do you agree or disagree with this statement?</p><img src="/2024/01/03/ielts-book-and-newspaper/Books.webp" class><p>Newspapers and books are vital media worldwide, serving as essential conduits for the latest information and valuable knowledge. With the advent of advanced technology, the potential long-term replacement of printed papers by online reading is evident. In my view, I favor this shift, and I will illustrate two primary advantages in this essay.</p><p>First and foremost, online reading can positively impact the environment. There is no doubt that paper usage would decline as more people adopt e-books or access information on the Internet. This reduction in paper consumption translates to fewer trees being cut down, preserving our forests and enhancing the transformation of carbon dioxide into oxygen. In the current era, with a growing emphasis on eco-friendly products, many believe this is a crucial step in addressing global warming.</p><p>Moreover, electronic books and online news offer more efficient means of dissemination and permanent storage. Unlike printed newspapers, which provide yesterday’s information, online news always offers real-time data. For example, sharing a website link by tapping on an iPhone facilitates the rapid spread of videos or messages. Additionally, the traditional process of book publishing, involving printing, cover creation, and transportation to various bookstores, is time-consuming. In contrast, e-books can be published more swiftly, leading to cost savings for consumers seeking knowledge. Furthermore, e-books can be stored indefinitely, whereas printed books are susceptible to moisture, dirt, or insects.</p><p>In conclusion, the promotion of online reading is justified due to several main advantages, including its environmentally friendly impact, efficient information dissemination, and long-term preservation. It is plausible that in the future, numerous e-books and online news sources will replace traditional printed ones.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Causes and Results </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The chart below show the results of a survey about people&#39;s coffee and tea buying and drinking habits in five Australian cities.</title>
+      <link href="/2024/01/01/ielts-coffee-and-tea/"/>
+      <url>/2024/01/01/ielts-coffee-and-tea/</url>
+      
+        <content type="html"><![CDATA[<img src="/2024/01/01/ielts-coffee-and-tea/Coffee-and-Tea.webp" class><p>The bar chart illustrates the purchasing and consumption habits of Australians regarding coffee and tea in various cities, including Sydney, Melbourne, Brisbane, Adelaide, and Hobart.</p><p>Overall, it is evident that a significant portion of the population prefers purchasing coffee and tea from cafés, while fewer individuals opt for fresh coffee.</p><p>Looking at the graph more closely, more than 60% of residents in three cities prefer cafés, with Melbourne leading at 65%, followed by Sydney at 61%, and Hobart at 63%, respectively. In contrast, fresh coffee consumption is less popular, with all cities reporting figures below 45%. Brisbane and Adelaide share the lowest figures at 34%, which are also the least number in the chart.</p><p>For instant coffee, Hobart stands out with nearly 55%, surpassing all other cities. Brisbane also performs remarkably well, securing the second position in this category. Moreover, in Adelaide, the data reveals a nearly equal preference between those who buy instant coffee (approximately 50%) and those who opt for café purchases (around 49%).</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Bar Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>In some countries, owning a home rather than renting one is very important for people.</title>
+      <link href="/2023/12/31/ielts-residence/"/>
+      <url>/2023/12/31/ielts-residence/</url>
+      
+        <content type="html"><![CDATA[<p>Why might this be the case?<br>Do you think this is a positive or negative situation?</p><img src="/2023/12/31/ielts-residence/Residence.jpeg" class><p>Residential accommodation is a critical aspect of modern society, as it addresses the fundamental need for shelter. The debate between renting an apartment and owning a house is a common discussion. In my personal view, owning a house has several positive impacts due to factors such as cost considerations and the symbolic importance of establishing a family. This essay will delve into these underlying reasons and present my perspective on the matter.</p><p>Cost is one of the most primary reasons. Specifically, renting a flat is not a sustainable long-term residential solution. First, apartment costs may fluctuate due to inflation, as some of landlords may escalate expenditures yearly or even monthly, which can have adverse impacts on those facing financial hardships. Second, when landlords decide to cease renting their properties, most tenants are left with no alternative but to leave. This not only results in additional expenditures but also requires a substantial amount of time devoted to the moving process.</p><p>Another major contributing factor is the symbolic importance of establishing a family. In certain regions, creating a family is deemed a crucial and pivotal stage in individuals’ lives. The procession of a home signifies independence and maturity, demonstrating one’s ability to care for others, particularly for those intending to have kids. For instance, in Chinese traditional concept, some parents incline towards leaving real estate to their children because they typically consider their kids.</p><p>In my opinion, owning their house possession has positive impacts for two reasons. First and foremost, renting cost might be stable since everyone tend to have their houses. Second, purchasing a house is definitely a large amount of one’s expenditure and also a dream; therefore, youngsters may be more diligent and save more funds for the future.</p><p>In conclusion, the cost of renting and the desire to building a family are the two primary reasons for valuing owing a house. This can affect positively towards our renting market and attitude working hard. Each house is a testament to our commitment to a prosperous and meaningful life.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Pros and Cons </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The chart shows British Emigration to selected destinations between 2004 and 2007.</title>
+      <link href="/2023/12/07/ielts-emigration/"/>
+      <url>/2023/12/07/ielts-emigration/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/12/07/ielts-emigration/Emigration.png" class><p>The bar chart details how many people emigrate to different countries from the UK during 2004 to 2007.</p><p>Overall, it is evident that most British people emigrated to Australia during the period. Conversely, USA and France were less popular for emigration compared to other countries.</p><p>Looking at the graph more closely, it is notable that British people prioritized Australia as the first emigration destination, since the least number (almost 39,000) in 2005 was higher than any other countries’ number regardless of time. Over 50,000 people emigrated to Australia in 2006, which was the largest number in the bar chart; however, it declined to about 43,000 people in the following year. Spain and New Zealand exhibited similar patterns, experiencing a decreasing trend from 2005 to 2007. Specifically, in Spain, the numbers declined from approximately 33,000 to 27,000, while in New Zealand, they decreased from 22,000 to 20,000.</p><p>The number of moving to USA fluctuated and the least number of people left the UK around 18,000 in 2005. Although substantial people (nearly 35,000) emigrated to France in 2005, it became less popular at the end of the period with 20,000 people in 2007.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Bar Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>A rise in the standard of living in a country often only seems to benefit cities rather than rural areas.</title>
+      <link href="/2023/12/06/ielts-living/"/>
+      <url>/2023/12/06/ielts-living/</url>
+      
+        <content type="html"><![CDATA[<p>What problems can this cause?<br>How might these problems be reduced?</p><img src="/2023/12/06/ielts-living/Living.jpeg" class><p>The gap between urban cities and countryside has become a critical issue, leading to the increase of economic and social inequality, which can have adverse impacts on our long-term development. In this essay, I will illustrate the underlying reasons and offer some viable solutions on it.</p><p>Rural-urban disparities is one of the most primary reasons. Specifically, urban areas are often equipped with advanced infrastructure and facilities, including gyms, pubs and department stores. These allow citizens to relax and unwind after a long working hours. For instance, London is the largest capital city worldwide, which is also one of the most prominent financial and political places. With rising living standard, people can benefit from healthcare, education, and transportation. One possible approach is that governments should prioritize the investment in rural infrastructure, including roads, schools and technology, to improve the overall quality of life in these areas.</p><p>Another major contributing factor is job opportunities. Cities provides more higher-paid jobs, which attract tens of thousands of youngsters from rural areas. Moreover, there are lots of prestigious universities and advanced manufacturing or companies in cities. The problem can be alleviated by subsidizing funds to these academic institutions and well-known cooperation to invest in rural areas. Take TSMC for an example, one of the most state-of-the-art semiconductor companies in the world. Many countries had invited the company to invest in their rural areas since TSMC need a lot of areas for factories and human resources with high techniques, which can definitely empower the local population and encourage its prospect.</p><p>In conclusion, it is inevitable that a rise in the standard of living, it is likely to benefit cities rather than rural areas due to rural-urban disparities and job opportunities. However, with correct and appropriate measures, it is possible to mitigate the impact of the issue.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Problem-Solution </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Students should focus on learning in the classroom rather than show their status by wearing fashionable clothes. Therefore, all students have to wear school uniforms.</title>
+      <link href="/2023/12/04/ielts-uniforms/"/>
+      <url>/2023/12/04/ielts-uniforms/</url>
+      
+        <content type="html"><![CDATA[<p>Do you agree or disagree with this statement?</p><img src="/2023/12/04/ielts-uniforms/Uniforms.webp" class><p>Wearing uniforms is one of the most unforgettable memories, representing our hardworking periods, energetic adolescence, and vibrant students’ life. While some individuals argue that students have the right to choose what they wear, opponents contend that wearing uniforms should be mandated. I wholeheartedly support the latter and I will provide three compelling reasons in this essay.</p><p>To begin with, wearing uniforms minimizes distractions and helps students maintain better focus on their academic performance. It is undeniable that primary goals of students are to learn, discover and explore different knowledge during school. If they pay too much attention on their appearance, the importance of their assignment or coursework may be overlooked. With this measure, the possibility of inappropriate clothes is less likely to appear in campus since students have to wear uniforms instead of their own styles.</p><p>Moreover, school security is another prominent issue that needs consideration. Students wearing uniforms serve as symbolic of the school, making it easier for security guards to recognize the students’ identification. To be specific, malicious individuals and criminals have difficulties to invade the campus if they wear normal clothes.</p><p>Last but not least, wearing uniforms fosters a sense of honor and a feeling of belonging to school. For instance, sometimes students are proud of themselves if they are in a prestigious institution, which means that their hardworking, persistence and intelligence in academic exams.</p><p>In conclusion, there are numerous benefits for students to wear uniforms, including focusing on their studies, school security, honor and the sense of belonging. It is imperative that every school should adopt uniform policies for these reasons.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The charts below show the average percentages in typical meals of three types of nutrients, all of which may be unhealthy if eaten too much.</title>
+      <link href="/2023/11/30/ielts-nutrients/"/>
+      <url>/2023/11/30/ielts-nutrients/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/30/ielts-nutrients/Nutrients.png" class><p>The charts detail how much sodium, saturated fat and added sugars are consumed in the average meal in the United States.</p><p>Overall, it is evident that a large portion of sodium and saturated fat is usually consumed during dinner time. On the other hand, snacks are accounted for the largest section for added sugar.</p><p>Looking at the pie charts more closely, it is notable that a majority of high sodium and saturated fat consumption occurs during dinner, with 43% and 37%, respectively. During lunch, both sodium and saturated fat rates are under one-third, with 29% and 26%. As for breakfast, it reveals an equal rate of 16% for both saturated fat and added sugar.</p><p>Interestingly, lower percentages of sodium (14%) and saturated fat (21%) are consumed during snack time, compared to added sugar, which represents the largest proportion in this chart at 42%.Additionally, at least one-fifth of the meal is still absorbed in terms of added sugar.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Pie Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Some people hesitate between getting a job and starting their own business. While the idea of not having a boss and working on one&#39;s own schedule may sound tempting, financial risks and stress sometimes outweigh these advantages.</title>
+      <link href="/2023/11/29/ielts-job-2/"/>
+      <url>/2023/11/29/ielts-job-2/</url>
+      
+        <content type="html"><![CDATA[<p>In your opinion, what are the pros and cons of working in a company?</p><img src="/2023/11/29/ielts-job-2/Job.webp" class><p>It is debatable that whether one should embrace employment or embark on entrepreneurship, particularly for recent graduates. While some people argue that job stability and lower risk make employment an attractive choice, opponents contend that starting a business is more rewarding. Personally, I support the former and I will discuss both of advantages and drawbacks.</p><p>On the positive side, employees bear less risk compared to entrepreneurs. For entry-level workers, concerns related to operating funds, human resources, and management are not paramount since they are neither chief executive officer (CEO) nor members of the board of directors. Despite potential unsatisfactory performance, majority of companies ensure that fixed monthly salaries and essential welfares. Moreover, employees are typically safeguarded by employment laws, preventing from vicious bosses and inappropriate demands. If one struggles with the company culture, they can easily explore other career options without significant opportunity costs.</p><p>On the contrary, excessive working hours pose a primary drawback, which can have detrimental impacts on individuals’ health and work-life balance. Certain professionals are compelled to exceed the standard 40-hour workweek, surpassing the average working hours. For instance, chefs and waiters are mandated to consistently work beyond 8 hours, especially during continuous holiday periods. Recent research has shown that prolonged periods without adequate relaxation can lead to both mental and physical health issues. This concern is particularly unsettling in occupations such as bus drivers and pilots, where excessive working hours could jeopardize public safety and lead to catastrophic consequences.</p><p>In conclusion, choosing between being an employee or an entrepreneur involves weighing various factors, including risk and management of working hours. It is crucial to carefully consider the pros and cons when opting for one’s career path.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Pros and Cons </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Forests produce fresh oxygen and participate in regulating climate. But every year the tree cover of our planet decreases due to deforestation.</title>
+      <link href="/2023/11/27/ielts-deforestation/"/>
+      <url>/2023/11/27/ielts-deforestation/</url>
+      
+        <content type="html"><![CDATA[<p>What are the primary causes of deforestation?<br>To what results may it lead?</p><p>Justify your opinion with relevant examples.</p><img src="/2023/11/27/ielts-deforestation/Deforestation.jpeg" class><p>Nowadays the number of trees or plants are continuously decreasing year after year, which has adverse impacts on our living environment. More and more people should be educated to have a common sense about deforestation and its consequences. This essay will delve into the primary reasons behind this issue and subsequently outline its potential effects.</p><p>From my own perspective, the foremost cause of deforestation is the expansion of residential areas. It is undeniable that the cost of living in urban areas is constantly rising due to the inflation and the price of raw materials; thus, both manufacturing and the government have no choice but to develop the farmland and greenery. Moreover, wood can be applied to many aspects, including paper, furniture and houses. Some of the trees are valuable, durable and rare resources, some of which made for wooden furniture, such as tables, chairs and doors due to their higher price.</p><p>The possible effects of this issue include the loss of biodiversity and exacerbation of global warming. First of all, the destruction of forests and jungles has negative impacts on our planet since some species may lose their habitats, resulting in their extinction. For instance, a study indicated that deforestation in Amazon has severe consequences for the biodiversity, putting various creatures at risk. Secondly, forests play a vital role as the Earth’s lungs since plantations convert carbon dioxide to oxygen, providing the fresh air for all livings. Without them, it will definitely accelerate the rate of global warming, contributing to rising sea levels and extreme weather conditions. </p><p>In conclusion, deforestation is resulted from human activities and higher economic value of trees, leading to the loss of biodiversity and climate change. It is imperative that all individuals should cooperate to alleviate the impact of this environmental challenge.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Causes and Results </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The charts below show the number of people in Europe who were affected by four types of noise by day and by night in cities and rural areas in 2007.</title>
+      <link href="/2023/11/26/ielts-noise/"/>
+      <url>/2023/11/26/ielts-noise/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/26/ielts-noise/Noise.png" class><p>The bar charts detail noise levels in Europe in 2007 delineated by time of day and rural or urban location. </p><p>Overall, it is evident that traffic was the most dominant factor affecting residents whether in city or rural areas. On the country, industry had the least effects.</p><p>Looking at the charts more closely, majority of people in cities were affected by the noise of traffic, with 64 million and 48 million people in day and night, respectively. It is notable that rural scope had similar pattern with city since the number of traffic was accounted the highest figures in the chart, with 58 million in total. Turning to noise from trains, in cities, 10 million individuals were impacted in the day and 8 million at night. In rural areas, this data was only slightly lower (8 million and 6 million).</p><p>Both numbers of annoyed people by aircraft and industry were truly low. There was only 4 million people affected by aircraft noise during the day compared to 1 million people at night time. Surprisingly, the noise from industry was the smallest amount in two charts because solely 1.25 million in city experienced the noisy pollution. Furthermore, no one was bothered in rural area regardless of day or night.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Bar Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The chart below shows the number of households in the US by their annual income in 2007, 2011, and 2015.</title>
+      <link href="/2023/11/25/ielts-income/"/>
+      <url>/2023/11/25/ielts-income/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/25/ielts-income/Income.png" class><p>The bar chart illustrates the annual income distribution of households in the United States across various income levels in the years 2007, 2011, and 2015.</p><p>Overall, a consistent pattern is observed among three years. The smallest number of households fell with the $75,000 - $99,999 income range in 2011, whereas the highest number was recorded for incomes exceeding $100,000 in 2015.</p><p>Looking at the chart more closely, households earning less than $25,000 numbered around 25 million in 2007, increasing to 29 million in 2011, and then slightly decreasing to 28 million in 2015. It is notable that the income ($75,000 - $99,999) consistently represented the fewest households, with approximately fewer than 15 million in both 2007 and 2011. However, there was notable surge in households earning over $100,000, reaching almost 35 million in 2015, compared to around 28 million in 2011, which had a significantly growth during this period.</p><p>The second highest number of households was in the $25,000 - $49,999 income range, with around 30 million in 2011. The group of $50,000 - $74,999 remained almost 20 million during these years, with a slight fluctuation.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Bar Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Some university students want to learn about other subjects in addition to their main subjects. Other believe it is more important to give all their time and attention to studying for a qualification.</title>
+      <link href="/2023/11/25/ielts-university/"/>
+      <url>/2023/11/25/ielts-university/</url>
+      
+        <content type="html"><![CDATA[<p>Discuss both these views and give your own opinion.</p><img src="/2023/11/25/ielts-university/University.jpeg" class><p>It is undeniable that university offers students numerous and various courses to hone their skills and talents. While some argue that academic institutions should prioritize the primary field of study, opponents advocate for a diverse education. Personally, I support the latter perspective and I will provide both viewpoints in this essay.</p><p>Proponents of studying main subject argue that these can increase their academic performance. They posit that students are susceptible to distractions from various coursework and assignments in multiple subjects, ultimately leading to a dilution of their attention on the core curriculum. Consequently, diversifying subjects could have adverse impacts on their learning outcomes, resulting in lower average scores and diminishing the importance of the original subjects.</p><p>On the contrary, delving into different areas of expertise can significantly broaden one’s horizons. First of all, general education not only contribute to mental and physical well-being health but open up opportunities in various academic fields. For instance, the rising awareness of health issues has led an increased in psychological or biological courses. Secondly, exposure to multiple subjects can greatly benefit one’s career path. Consider data science, where an exceptional data scientist needs proficiency in both statistics and computer science. Mastery of these diverse subjects undoubtedly enhances employability.</p><p>In my opinion, I recommend freshmen or sophomores should explore different courses to discover their interests. This approach fosters their creativity, cultivates varied perspectives, and contributes to a more comprehensive, healthier, and positive educational system.</p><p>In conclusion, there are different opinions on focusing one’s subjects, including increasing personal performance and opening one’s horizons. From my own view, I advocate for university students to devote themselves to their main subject while also embracing a range of other subjects.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Both Views </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The diagram below show the changes that have taken place at West park Secondary School since its construction in 1950.</title>
+      <link href="/2023/11/23/ielts-park/"/>
+      <url>/2023/11/23/ielts-park/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/23/ielts-park/Park.png" class><p>The maps compare variation of three different periods at West Park Secondary School during 1950 to 2010.</p><p>Overall, it is evident that numerous facilities had been replaced and various buildings were built in this area, including recreation, education and sports.</p><p>Looking at the diagram more closely, it is notable that parking lot had the largest area in 2010, comparing to smaller one in 1980 and no car park in 1950, respectively. Academic institute had been expanded in 1980, with a new building for science block, which replaced with the original residential scope. </p><p>A quarter of area was planned for playground in 1950 and it remained unchanged in 1980. However, the government relocated the sports field and replaced some part of playground, nearly a third in 2010. As for greenery, although it could be observed in 1950 in the map, authorities had another purpose on this area and removed the farmland in 1980, a sports field was built in 1980. Ultimately, there was an expansion of the car park in 2010 and the sport field was relocated to another place.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Map </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Plagiarism in academics has become a pressing problem in many countries today.</title>
+      <link href="/2023/11/22/ielts-plagiarism/"/>
+      <url>/2023/11/22/ielts-plagiarism/</url>
+      
+        <content type="html"><![CDATA[<p>What are the causes of this problem?<br>What are some possible solutions?</p><img src="/2023/11/22/ielts-plagiarism/Plagiarism.webp" class><p>It is common that the standard graduation of higher education is paper-writing and research. An upward trend of plagiarism in academics has been observed in recent years, which has adverse impacts on educational aspects. In this essay, I will illustrate the underlying reasons for plagiarism and offer some viable solutions on it.</p><p>Desire to reach higher scores is one of the most primary reasons for encouraging one to copy texts from others’ dissertations. Those who give exceptional performance on academics might have opportunity for scholarships application to afford one’s tuition fees. One possible approach is that enhancing the difficulties of requirements, including multiple professions co-censoring, peer reviewing and importing plagiarism checking system. Not only does it definitely lessen the frequency of copying, but it improves the importance on heightened academic’s awareness, which will also increase the credibility and reliability on research.</p><p>Another major contributing factor in plagiarism is procrastination or poor time management. Students might not realize that the deadline of coursework and put less emphasis on education. Some may focus on their hobbies, and some even have to earn adequate funds to support their studies; however, these might lose the importance of researching and leads to procrastination of doing assignments. This problem can be alleviated by instructing correct time concepts and requiring on several splitting parts of deadline on theses, as this would make students complete it on schedule.</p><p>In conclusion, plagiarism is a serious, tricky and difficult problem relating to many aspects, such as the aspiration of excellent grades and procrastination. However, with correct and appropriate measures, it is possible to mitigate the impact of the issue.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Problem-Solution </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Some people think that couples should live together before getting married to start knowing each other better and see if they are compatible. Others say that because of this tendency people become immoral and only deep emotional attachment makes a durable alliance.</title>
+      <link href="/2023/11/17/ielts-marriage/"/>
+      <url>/2023/11/17/ielts-marriage/</url>
+      
+        <content type="html"><![CDATA[<p>What is your opinion?</p><img src="/2023/11/17/ielts-marriage/Marriage.jpeg" class><p>Marriage has always been one of the most enormously important aspects for majority of individuals since it is a life-long commitment for two people. Opinions diverge on whether couples should cohabit before marriage, with some asserting it fosters better understanding between partners, while others contend it may lead to immorality and emotional attachment. I generally agree with the former and I will provide compelling reasons in the essay.</p><p>On the one hand, cohabitation allows couples to gain profound insights into each other’s lifestyle. This enables them to familiarize themselves with various aspects of one another, including dietary preferences, sleeping habits and personal hygiene. In Taiwan, numerous reports highlight that many couples struggle with differing living habits, often leading to divorce. By cohabiting for a period, not only does it strengthens their relationships, but it also heightens their awareness of both similarities and differences. Moreover, cohabitation fortifies relationships, rendering them more robust and trustworthy, thereby cultivating enhanced communication and connection.</p><p>On the other hand, obsolete concepts should be reconsidered or regenerated. Nowadays, it is possible that a lot of individuals willingly accept new perspectives from foreigner countries or younger generation. Joint life before getting marriage is a popular trend among most people, especially youngsters. In my view, specific traditions or beliefs can detrimentally affect individuals, as they may not develop familiarity with each other without the shared experience of residing in the same apartment or flat.</p><p>In conclusion, cohabitation enriches emotional connections, providing valuable insights before marriage or even parenthood. Simultaneously, it is crucial to reevaluate obsolete concepts, as the acceptance of novel ideas from different cultures and generations becomes increasingly prevalent.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The maps show improvements that have been made to a university campus between 2010 and present day.</title>
+      <link href="/2023/11/16/ielts-campus/"/>
+      <url>/2023/11/16/ielts-campus/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/16/ielts-campus/Campus.png" class><p>The maps compare the different development in a university campus from 2010 to the present</p><p>Overall, it is evident that multiple buildings have changed into diverse facilities. Also, a new road was constructed for educational and residential purposes.</p><p>Looking at the maps more closely, in order to recruit more students, two student accommodations were built on the west and east, respectively. A new road was constructed on the east side dormitory, which is convenient for students’ commuting; however, shops and restaurants were demolished because of this new dormitory and pathway. Meanwhile, a student accommodation on south-west was replaced by student facilities, including shops and offices.</p><p>Teaching block was expanded for the department of arts and science; thus, each subject was built independently to replace university offices and mixed subjects teaching block. Furthermore, the lawn and seating area were removed and the lake was remained. Therefore, new campus’s greenery or plants are less than ever before.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Map </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The government should sometimes infringe on people&#39;s freedom for the security of society.</title>
+      <link href="/2023/11/15/ielts-government/"/>
+      <url>/2023/11/15/ielts-government/</url>
+      
+        <content type="html"><![CDATA[<p>To what extent do you agree or disagree with this statement?</p><img src="/2023/11/15/ielts-government/Government.webp" class><p>Nowadays, liberty and freedom are fundamental and paramount values that we cherish. While some people contend that personal freedom  should remain inviolable from government interference. However, I firmly disagree with this viewpoint and I will illustrate with two compelling instances in the essay.</p><p>First and foremost, public welfare sometimes takes precedence over individual rights. In term of crisis, the government might have no choice but to infringe on one’s privacy or liberty. Take coronavirus as an example, severe pandemic has ravaged for the past three years, majority of individuals worldwide have tested positive for Covid-19. The authorities took measures to mitigate the impacts of the virus, including implementing mandatory mask-wearing regulations, enforcing limitations at national borders; however, contact tracing raised concerns as it intruded upon individuals’ privacy. Individuals testing positive had to undergo quarantine or isolation from others due to public hygiene factor. Moreover, spreading false or misleading information should be curtailed because it may have adverse impact on those who can not easily tell apart true or false.</p><p>In addition, social safety is important. Some individuals may not take law enforcements or other’s freedom seriously, which can be a potential menace for jeopardizing other’s life. Firstly, the information of violent or sexual assault criminals or murderers should be revealed to public after confirming the criminal facts by authorities. Also, they should be sentenced to life imprisonment for serious offenses. Second, those who have drunk-driving should be revoked their licenses, which can improve the road safety. </p><p>In conclusion, governments have the right to invade one’s freedom when in an emergency or to reduce the crime rates. For these reasons, it is possible that to achieve a healthier, safer and peaceful community.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>活用你的表情符號吧！</title>
+      <link href="/2023/11/14/line-sticker/"/>
+      <url>/2023/11/14/line-sticker/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/14/line-sticker/Social-media.webp" class><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>剛好朋友推薦試用 emoji ，而可以兩天免費試用新的表情符號，所以來嚐鮮看看</p><h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><p>有別於一般的貼圖稍微有點不同， 生動的 emoji 甚至可以採組合技，表達你多元豐富的情緒<br>但是不過有一些限制，最多只能三個，一個和兩個的大小一致，三個圖案的時候會稍微縮小一點</p><h3 id="單打獨鬥"><a href="#單打獨鬥" class="headerlink" title="單打獨鬥"></a>單打獨鬥</h3><p>可以選擇單一的表情符號，有時單一個也足夠呈現目前想要表達的心情</p><ul><li>呼搭啦：我現在就想要喝<img src="/2023/11/14/line-sticker/9.gif" class></li></ul><h3 id="好事成雙"><a href="#好事成雙" class="headerlink" title="好事成雙"></a>好事成雙</h3><ul><li><p>乾杯：適合想要揪喝酒時候</p><img src="/2023/11/14/line-sticker/1.gif" class></li><li><p>打拳：覺得該朋友欠揍的時候</p><img src="/2023/11/14/line-sticker/3.gif" class></li><li><p>大聲公：你是在大聲什麼啦！</p><img src="/2023/11/14/line-sticker/4.gif" class></li></ul><h3 id="三人成虎"><a href="#三人成虎" class="headerlink" title="三人成虎"></a>三人成虎</h3><ul><li><p>花開富貴：看到對方心花怒放</p><img src="/2023/11/14/line-sticker/5.gif" class></li><li><p>歡迎光臨：很開心跟你聊天</p><img src="/2023/11/14/line-sticker/2.gif" class></li></ul><h3 id="上下一心"><a href="#上下一心" class="headerlink" title="上下一心"></a>上下一心</h3><ul><li><p>生日快樂：還使用一般的貼圖嗎？趕快跟風來個不一樣的祝福</p><img src="/2023/11/14/line-sticker/6.gif" class></li><li><p>指來指去：到底誰是兇手？</p><img src="/2023/11/14/line-sticker/7.gif" class></li></ul><h3 id="三合一"><a href="#三合一" class="headerlink" title="三合一"></a>三合一</h3><ul><li>金字塔：鯊魚疊疊樂<img src="/2023/11/14/line-sticker/8.gif" class></li></ul><h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><p>表情符號也動起來了，看起來真的非常有趣！這些招式請盡量對你的好朋友使用吧!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Social </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Emoji </tag>
+            
+            <tag> 表情符號 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The graph below gives information about the percentage of the population in four Asian countries living in cities from 1970 to 2020, with prediction for 2030 and 2040.</title>
+      <link href="/2023/11/13/ielts-population/"/>
+      <url>/2023/11/13/ielts-population/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/13/ielts-population/Population.png" class><p>The line chart depicts the urban residency percentages in four distinct countries: the Philippines, Malaysia, Thailand, and Indonesia, covering the time frame from 1970 to 2020, with projection rate of each country durning 2030 and 2040.</p><p>Overall, it is readily apparent that living in urban areas will increase in each nation, particularly Malaysia and the Philippines. By the end of the period, the percentage of the population in Malaysia will reach the highest rate at the end of the period, while Thailand will be the lowest one.</p><p>Looking at the graph more closely, an upward trend in the Malaysia’s line was observed between 1970 and 2020, with 30%(nearly a third) and 75%(around third-quarters), respectively. Also, the number of population will still rise steadily as its prediction. For Thailand,  the initial rate was under a fifth in 1970, and it grew slowly to almost 30% in 2020. Although the prediction of Thailand’s population will experience&#x2F;witness a considerable upward trend between 2030 to 2040, it will rank the fourth position at the end.</p><p>Indonesia’s population was the lowest number (about 15%) in 1970; however, it had a surge during 1970 and 2020, even surpassed&#x2F;outnumbered  the rate of Philippines in 2010. The prediction of population in Indonesia will peak at around 60%, which will take the second place in 2040.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Line Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The most important aim of science should be to improve people’s lives.</title>
+      <link href="/2023/11/12/ielts-science/"/>
+      <url>/2023/11/12/ielts-science/</url>
+      
+        <content type="html"><![CDATA[<p>To what extent do you agree or disagree with this statement?</p><img src="/2023/11/12/ielts-science/Science.webp" class><p>Nowadays, there are various advanced technologies such as mobile phones and cars. Some people argue that the ultimate goal of science is to enhance the quality of our lives. I completely agree with this view point and I will provide two compelling instances in the essay.</p><p>To begin with, the motivation of science is to have more convenient and comfortable lifestyle. It is undeniable that plenty of inventions appeared since the Industrial Revolution. First, the eldest underground was constructed in the UK, which was aim for business trading and transportation, reducing a lot of time on commuting and cost of trading. Recently, cars or shuttle buses are more sophisticated than ever before because they are not only for transportation but also for entertainment. With advanced artificial intelligence, autopilot systems can predict and avoid car accidents to improve road safety. Second, a tiny gadget phone provides a lot of functionality, such as social media, emails and games.</p><p>In addition, latest modern technologies can help people extend their lifespan by providing more accurate diagnosis and improve public hygiene. Firstly, Apple has been devoted itself to personal health by researching complicated or state-of-the-art technology. Apple watch is designed to monitor one’s heartbeat and blood pressure, which is suitable for the elderly. Second, in order to reduce the menace from the coronavirus, scientists had a remarkable progress on vaccines, including AZ and BNT, which can reduce the risk of pandemics.</p><p>In conclusion, the primary goal of science is that the motivation of living a better lifestyle and live longer. It is predictable that more and more advanced technology will be invented to satisfy our needs for health and convenience.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nowadays university education is considered very important for people&#39;s future. However, there are a lot of successful people who didn&#39;t get higher education.</title>
+      <link href="/2023/11/10/ielts-education-2/"/>
+      <url>/2023/11/10/ielts-education-2/</url>
+      
+        <content type="html"><![CDATA[<p>Do you think that higher education is necessary to succeed in life?</p><p>Justify your opinion with relevant examples.</p><img src="/2023/11/10/ielts-education-2/Education-2.webp" class><p>Academic education is one of the most common ways to measure one’s ability or credit. Some people argue that higher education is not essential because a plenty of successful businessmen, politicians, and celebrities do not have university’s degree. However, I disagree with this viewpoint and I will demonstrate compelling examples in the essay.</p><p>Firstly, higher education diploma is just a basic ticket for well-paid jobs. In Taiwan, majority of students have at least bachelor’s degree, some of them even achieve master or PhD degree. Thus, opportunities with famous companies or competitive salaries are often distributed to those who have higher academic education if they do not have any working experience. Take Mark Zuckerberg as an example, He studied the Harvard University, which is one of the most prestigious academic institutions worldwide, although he did not complete the course at that time. Zuckerberg is a Meta cofounder, who successfully created a well-known platform, including Facebook, Threads and Instagram. Intelligent and exceptional individuals like him also attend university, not to mention ordinary people. Thus, general people should acquire higher education.</p><p>In addition, there are many paths to succeed; however, studying in the university is one of the common ways to be successful. It is undeniable that creating business may involve economic theories, which can be taught in the university. Some businessmen tend to acquire EMBA or MBA courses if they have some working experiences. These courses not only help them to enhance their expertise but also create more chances to know successful individuals in other areas. Being a celebrity sometimes need luck, fortune and good-looking; however, meeting the requirement of the university is much more controllable if someone prove his hard-working. For instance, Emma Watson also applied for Oxford University recently to sharpen her skills despite having a well-known movie, Harry Potter.</p><p>In conclusion, higher education is necessary to succeed in life since higher education is usually seen as a basic requirement when applying jobs. Also, studying in the university is easier for general people to succeed. Without academic evidence, it is difficult to succeed if you are not exception.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The line graph shows the average number of weekly patients visiting four clinics of a hospital from 2010 to 2016.</title>
+      <link href="/2023/11/09/ielts-patients/"/>
+      <url>/2023/11/09/ielts-patients/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/09/ielts-patients/Patient.png" class><p>The given line graph compares the mean figures of patients who visited four different clinics in one hospital each &#x2F;per week during 2010 and 2016, including birth control, eye, diabetic and dental clinics.</p><p>Overall, it is evident that all of clinics had an upward trend at the end of the period. Eye clinic reached its highest number in 2016, whereas dental clinic had the lowest patients in 2012.</p><p>Looking at the graph more closely, eye clinic peaked at approximately 350 in 2016, which was the largest patients’ numbers in this line graph. During 2010 and 2012, eye clinic had a steady growth and reached 150 patients in 2012; however, it had a significant rise between 2012 to 2016. Birth control clinic ranked the first position in 2010 among all clinics, with 250 patients. Nevertheless, it experienced a downward tread during 2012 and 2014, with around 280 and 175 people, respectively.</p><p>Both numbers for dental and diabetic clinics had the similar figures during the period. Eye had its smallest number (around 50) in 2012, which was also the lowest figures in this line chart. Compared to eye clinic fluctuation, dental clinic rose steadily and peaked at around 175 patients in 2016.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Line Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Today’s schools should teach their students how to survive financially in the world today.</title>
+      <link href="/2023/11/08/ielts-investment/"/>
+      <url>/2023/11/08/ielts-investment/</url>
+      
+        <content type="html"><![CDATA[<p>To what extent do you agree or disagree with this statement?</p><img src="/2023/11/08/ielts-investment/Investment.jpeg" class><p>In today’s rapidly ever-evolving world, school still offer tradition curriculum. It is undeniable that literature and mathematics are pivotal for our current education; however, students should be also informed correct financial knowledge. In this essay, I agree that schools should impart financial courses and I will provide two compelling reasons.</p><p>To begin with, an understanding of financial concepts is significantly important which can have enormous impacts on one’s life. Students should be taught various economical indexes to understand how the market works, such as stock indexes, interest rates or exchange rates. Inexperienced students are susceptible to exaggeration in advertisements or unreliable investment groups when they lack the knowledge to distinguish the truth from falsehood. Moreover, these concepts might lead them have stable cash flow or even early retirement, providing personal financial security and the freedom to pursue their dreams.</p><p>On top of that, credit scores are also imperative for those who are eager to purchase a house or car in the future. If students buy stock without enough money, their credit scores would be affected and could have adverse impacts on their interest rates. Investing in real estate often requires a considerable wealth; thus, it is common that individuals to have mortgages to make it affordable. However, banks offer less favorable interest rates, impose higher fees, and provide lower loan amounts to individuals with poor credit scores. Thus, academic institutions should plan a course teaching the correct concepts of debt management.</p><p>To conclude, nowadays many students lack correct financial knowledge, which makes them vulnerable to scams and frauds. Debt management is also a crucial issue because the majority of individuals might need to borrow money. With these two reasons, it is essential for schools to offer a well-planned curriculum in the field of finance for students.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The plans below show the site of an airport now and how it will look after redevelopment next year.</title>
+      <link href="/2023/11/07/ielts-airport/"/>
+      <url>/2023/11/07/ielts-airport/</url>
+      
+        <content type="html"><![CDATA[<p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p><img src="/2023/11/07/ielts-airport/Airport.webp" class><p>The schemes depict the map of an airport current state and the refurbishment in the following year.</p><p>Overall, the redesign promises an expansion in both the number of gates and customer facilities. The blueprint also entails a relocation of stores to better cater to passengers’ needs, along with an increase in the number of entrance doors to accommodate a higher volume of individuals.</p><p>First, it is evident that there will 18 gates next year, nearly double the current count of 8 gates. A sky train will be implemented to reduce the distance between security passport control and the gates, as the airport will undergo significant expansion. The airport will offer an array of additional facilities, including shops, ATMs, baggage drop services, and car rental options. Upon passing through the security passport control, passengers will have the opportunity to explore new shops and amenities.</p><p>Furthermore, the check-in center will be relocated from left side to right side when entering the departure area, and the airport will transition from a single entrance to having two entrances for both departures and arrivals.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Map </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Some people claim that immigrants should adopt the local culture when immigrating to a new country. While others think that they can establish a minority community instead.</title>
+      <link href="/2023/11/06/ielts-immigrant/"/>
+      <url>/2023/11/06/ielts-immigrant/</url>
+      
+        <content type="html"><![CDATA[<p>Discuss both views and give your opinion.</p><img src="/2023/11/06/ielts-immigrant/Immigrant.jpeg" class><p>More people prefer to immigrate to other country due to economic, political, or cultural aspects. While some people contend that they should build a minority community, others argue that embracing different culture is more recommended. This essay will discuss both viewpoints and argue in favor of the latter.</p><p>On the one hand, immigrants in an unfamiliar country somehow are affected mentally and physically. It is undeniable that a hidden language barrier is constructed when speaking a non-native language with native speakers sometimes. Native speakers may use idioms or local words that it is difficult for foreigners to understand immediately. For instance, elevator and lift have the same meaning; however, in the UK, it is more common to use lift instead of elevator. Moreover, when staying in a foreign nation, some individuals may not adept into local foods or cultures, which may lead to homesickness or depressing moods. Thus, it is common that there are numerous China towns worldwide, providing Asian cuisine and Chinese supermarkets can be observed.</p><p>On the other hand, experiencing different culture can enrich one’s life. If someone makes the right decision to immigrate to another country, it is possible that somebody is inclined to immerse himself or herself in diverse cultures and backgrounds. Studies have shown that those who are willing to accept the local culture in a new country tend to have more enjoyable and happier lives, which can encourage them to have more exceptional ideas and contribute to the workplaces. Furthermore, interacting with locals definitely broaden our horizons. For instance, having an exotic Christmas’s party in different country with local people is an unforgettable memory.</p><p>In my opinion, embracing local culture has brought plenty of benefits. These valuable memories will keep forever when tasting local foods or even exchange cultures with foreigners.</p><p>In conclusion, although living in an unfamiliar place sometimes leads to homesickness, immigrating to another nation is a very rare chance and it should be cherished. Thus, adopting the local culture is more recommended due to enriching one’s life.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Both View </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The table below shows the changes in exports in HK billions between 2009 and 2010.</title>
+      <link href="/2023/11/05/ielts-exports/"/>
+      <url>/2023/11/05/ielts-exports/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/05/ielts-exports/Exports.png" class><p>The table illustrates the variation rate in Hong Kong exports during 2009 and 2010 in five different categories, including equipment, telecommunication, clothing, manufacturing, and metals.</p><p>Overall, it is evident that an upward trend could be observed in total changes. The change in the category of metals was the largest number, while the manufacturing one was the smallest.</p><p>Looking at the table more closely, it is clear that overall change increased during this period, from 32 billion in 2009 to 38.4 billion in 2010, representing a one-fifth increase. The change in metals had the highest percentage increase (122%) in this table; however, the change in manufacturing was the smallest number (-27%). Additionally, clothing exports also experienced a downward trend, with a -27% change, ranking the second position with negative growth.</p><p>Both of export numbers for equipment and telecommunication showed an upward trend, with changes of 13% and 61% (nearly two-thirds) respectively. Moreover, it is noticeable that the export number for telecommunication in 2010 reached the highest figure at 12.7 billion, and the figure for equipment was also over 10 billion, specifically 11.6 billion.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Table </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Everyone deserves to be educated. It’s unfair that intelligent people are not admitted to private universities because of their financial background. University education should be free for everyone.</title>
+      <link href="/2023/11/03/ielts-education/"/>
+      <url>/2023/11/03/ielts-education/</url>
+      
+        <content type="html"><![CDATA[<p>Do you agree or disagree?</p><img src="/2023/11/03/ielts-education/Education.jpeg" class><p>Academic degree is one of the most common criteria measuring one’s ability or credit, so undoubtedly everyone has the right to pursue the higher educational degree. Some people argue that the government should provide all subsidy on one’s university fee. However, I do not support this viewpoint and I will provide two compelling reasons in the essay.</p><p>It is unfair to allocate the enormous expenditure on covering university fees for everyone by the government. The academic institutes should create a norm to evaluate each student’s academic performance and extracurricular activities. Instead of abolishing the tuition, the university should provide scholarships for those who perform academically well or has an extraordinary working experience. With this scholarship awarding system, students would be encouraged to strive for funds to complete their degrees. For instance, various universities in the UK provide plenty of funds for higher GPA applicants, which attract tens of thousands of students worldwide to study. Furthermore, numerous private and governmental institutes, including prestigious programs like the Chevening Scholarship, provide financial assistance to students facing economic hardships.</p><p>Without funds, the quality of education might decline. Tuition fees are allocated to various aspects, including research, academic journals, facilities, and professors, which are essential factors to achieve a higher position in QS rankings. Consequently, the university without enough funds might not be appealing for students due to its lower rank or quality. Administrative staff are crucial because they not only recruit new students but maintain the amenities, such as the library, swimming pool or playground. Moreover, these funds could reward those who are hard-working, stimulating students study PhD degrees or researching exceptional projects.</p><p>In conclusion, the funds should be allocated for scholarship rather than providing for all people. Investments in the quality of university deserve attention since it is undeniable that the evaluation QS rankings entails different aspects. Education is crucial; however, this does not equivalent that the higher academic degree should be entirely no charge for students.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Supervisor 監控 Flask 服務</title>
+      <link href="/2023/11/03/python-supervisor/"/>
+      <url>/2023/11/03/python-supervisor/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/03/python-supervisor/Supervisor.webp" class><h2 id="契機"><a href="#契機" class="headerlink" title="契機"></a>契機</h2><p>自己建立的 flask 服務不知莫名的原因一直掛掉非常苦惱，當務之急是讓這個服務不要中斷，於是找到這個 supervisor 套件可以幫忙監控服務。而本篇文章特別紀念一下這位 Supervisor 大功臣。</p><h2 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h2><p>Supervisor 是一個用 python 撰寫的程序管理套件，提供視覺化介面，方便可以啟用、重啟和關閉。該套件可以監控程序的狀態，若程序掛掉可以自動重啟，易於開發者監控服務。</p><h2 id="安裝步驟"><a href="#安裝步驟" class="headerlink" title="安裝步驟"></a>安裝步驟</h2><p>實作環境為 Ubuntu 20.04.2 LTS</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install supervisor</span><br></pre></td></tr></table></figure><p>待會有兩個檔案需要設定，分別為 Supervisor 設定檔和自己服務的設定檔</p><h2 id="Supervisor-設定檔"><a href="#Supervisor-設定檔" class="headerlink" title="Supervisor 設定檔"></a>Supervisor 設定檔</h2><p>將範例檔存到自己的路徑，而我是存放於 &#x2F;etc&#x2F;supervisor 的路徑之下</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo_supervisord_conf &gt; /etc/supervisor/supervisord.conf</span><br></pre></td></tr></table></figure><p>接著進入設定檔修改參數</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/supervisor/supervisord.conf</span><br></pre></td></tr></table></figure><p>修改最後兩行參數，修改 files 指向，待會要新增設定服務檔</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[include]</span><br><span class="line">files = /etc/supervisor/conf.d/*.conf ;</span><br></pre></td></tr></table></figure><p>我有特別將 unix_http_server、inet_http_server 、supervisorctl 的註解做改寫如下(因為一直遇到 ProtocolError: &lt;ProtocolError for 127.0.0.1&#x2F;RPC2: 401 Unauthorized&gt; 的錯誤，主要是因為 authentication，有找這篇<a href="https://blog.csdn.net/xdreamman/article/details/91388814">文章</a>解決問題)</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[unix_http_server]</span><br><span class="line">file=/tmp/supervisor.sock</span><br><span class="line">chmod=0700                 </span><br><span class="line">chown=nobody:nogroup       </span><br><span class="line">username=user              </span><br><span class="line">password=123               </span><br><span class="line">...</span><br><span class="line">[inet_http_server]         </span><br><span class="line">port=127.0.0.1:9001        </span><br><span class="line">username=user              </span><br><span class="line">password=123              </span><br><span class="line">...</span><br><span class="line">[supervisorctl]</span><br><span class="line">serverurl=unix:///tmp/supervisor.sock </span><br><span class="line">serverurl=http://127.0.0.1:9001 </span><br><span class="line">username=user              </span><br><span class="line">password=123</span><br></pre></td></tr></table></figure><h2 id="服務設定檔"><a href="#服務設定檔" class="headerlink" title="服務設定檔"></a>服務設定檔</h2><p>新增自己要監控的服務設定檔，例如我創建一個 demo.conf</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/supervisor/conf.d/demo.conf</span><br></pre></td></tr></table></figure><p>在這個 demo.conf 可以設定您的服務，這邊的 program 名稱等等會用到哦！</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[program:demo_server]</span><br><span class="line">command = python3 manager.py runserver</span><br><span class="line">directory = /home/erik/demo_server</span><br><span class="line">user = erik</span><br><span class="line">autostart = true</span><br><span class="line">autorestart = true</span><br><span class="line">stdout_logfile = /home/erik/supervisor/log/demo_server.log</span><br><span class="line">stderr_logfile = /home/erik/supervisor/log/demo_server_err.log</span><br><span class="line">environment = NODE_ENV=&#x27;prod&#x27;</span><br></pre></td></tr></table></figure><h2 id="啟用監控服務"><a href="#啟用監控服務" class="headerlink" title="啟用監控服務"></a>啟用監控服務</h2><p>啟動 Supervisor<br>上面都設定完畢後就可以啟動 Supervisor 囉！</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">supervisord -c /etc/supervisor/supervisord.conf</span><br></pre></td></tr></table></figure><p>可以看一下是否有在 9001 port 啟動服務或是用 ps -ef 看一下</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:9001</span><br><span class="line">ps -ef | grep supervisor</span><br></pre></td></tr></table></figure><h2 id="啟動服務監控"><a href="#啟動服務監控" class="headerlink" title="啟動服務監控"></a>啟動服務監控</h2><p>接者就啟動自己的服務</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">supervisorctl start demo_server</span><br></pre></td></tr></table></figure><p>如果發現沒有啟動成功，可以看一下錯誤問題是什麼</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">supervisorctl tail demo_server stderr</span><br></pre></td></tr></table></figure><p>筆者就發現該環境沒有安裝好 flask_script (應該要用 docker 來避免環境的問題)</p><p>裝好後大家就可以自己殺掉服務，看 supervisor 有沒有幫你重啟服務。</p><h2 id="常用-Supervisor-指令"><a href="#常用-Supervisor-指令" class="headerlink" title="常用 Supervisor 指令"></a>常用 Supervisor 指令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">supervisorctl start</span><br><span class="line">supervisorctl restart</span><br><span class="line">supervisorctl stop</span><br></pre></td></tr></table></figure><h2 id="使用心得"><a href="#使用心得" class="headerlink" title="使用心得"></a>使用心得</h2><p>只要幾個安裝步驟就可以方便監控服務，之後不需要服務掛掉要自己重啟，還有 web 面板可以操控，真是不錯！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Backend </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> flask </tag>
+            
+            <tag> supervisor </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The pie charts below illustrate the number of journal articles read per week by all students, PhD students, and junior lectures at an Australian university.</title>
+      <link href="/2023/11/02/ielts-reading/"/>
+      <url>/2023/11/02/ielts-reading/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/11/02/ielts-reading/Reading.png" class><p>The number of journal articles which are read each weekly by three different groups at an Australian university is portrayed in the given pie charts.</p><p>Overall, it is evident that the most proportion of each group are different. The number of articles read by PhD students is the highest, while the figure of articles read by all students is the smallest.</p><p>Looking at the pie chart more closely, it is undeniable that PhD students are the most hard-working students, since four-fifths of student read more than 12 articles; however, only 12% of all students, representing a minority, read over 12 articles. The number of reading 1-5 articles accounts the largest rate (67%, approximately two-thirds) in the category of all student, while the same number of articles in PhD students and junior student are 5% and 1%, respectively. Additionally, the number of 6 to 11 articles reaches the third-quarters rate, which represents the highest rate among all students (21%) and PhD students (15%).</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Pie Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Establishing good relationships in the workplace is not important, as the primary goal of every person is to focus on work.</title>
+      <link href="/2023/11/01/ielts-workplace/"/>
+      <url>/2023/11/01/ielts-workplace/</url>
+      
+        <content type="html"><![CDATA[<p>To what extent do you agree with this statement?</p><img src="/2023/11/01/ielts-workplace/Workplace.webp" class><p>It is undeniable that companies are profitable oriented places, aiming for higher revenue or prestigious fame. Some people argue that the most critical goal for employees is to solely concentrate on work. However, I do not agree with this and I will provide two compelling reasons in this essay.</p><p>To begin with, projects could be completed more smoothly with better relationships. Some projects need the cooperation of individuals and huge funds. For instance, building a credit predicting system with artificial intelligent in bank requires various departments, such as credit card department, technological support team and so on. If they have good relationships, it is possible that the system could be established more rapidly and the company could benefit in short time. Moreover, huge projects often require team work and continue at least several months; thus, it is difficult to focus only on just work without building a relationship with other colleagues.</p><p>On top of that, better working vibe may enhance the productivity. Without the doubt, environment has a substantial impact on one’s mental and physical health. Studies have shown that working in a team with good relationships not only fosters employees’ efficiency, but also has a positive correlation with a company’s revenue. Take Google as an example, the cooperation offers their employees with facilities, such as gym, café and canteen, allowing them to have a flexible time communicating with others colleagues. Furthermore, team building culture is also a popular concept, which encourages the employees to interact with each other, creating more exceptional ideas or projects.</p><p>In conclusion, companies should not focus only on their profits because establishing good relationships have potential benefits, such as tasks can be done more smoothly or better working vibe helps the productivity. It is worthy that the companies should put more emphasis on the team relationship rather than just focusing on work.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>In many countries there is a shortage of suitable people for essential jobs. What do you think are the causes of this problem and what measures could be taken to solve it?</title>
+      <link href="/2023/10/31/ielts-job/"/>
+      <url>/2023/10/31/ielts-job/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/10/31/ielts-job/Job.jpeg" class><p>Nowadays, several nations have experienced a workforce shortage for necessary jobs, such as cleaner, farmer, and waiter. Without these kinds of labor, it might have an adverse impact on the development of the country. In this essay, I will illustrate the underlying reasons for staff shortages and offer some viable solutions on it.</p><p>The gap between essential occupations and professional careers often results from differences in educational levels. Those who have a higher academic background tend to be a knowledge worker rather than a manual or unskilled labor. Moreover, the proportion of individuals with bachelor’s or master’s degrees is higher than ever before, resulting in a large population of highly educated students. One possible approach is the raising the basic wage to attract more potential workers for necessary jobs. However, one drawback for increasing the budget is that it may lead to price hikes in daily commodities affecting personal expenses.</p><p>Another major contributing factor in staff shortage is excessive working hours. This not only makes lower quality of jobs but affects one’s mental and physical health. Policies should be implemented such as shifting systems to reduce it, although this would definitely require a larger workforce.</p><p>The third, and perhaps most important factor is low salary. Offering minimum wage may not be sufficient to attract the workforce in developed countries; thus, our authorities should consider employing more foreigner workers from other nations to address the shortage issue. This problem can be alleviated by hiring more foreigner workers, as the basic wage might be higher than in these developing countries.</p><p>In conclusion, shortage workforce for essential jobs is tricky and difficult problem relating to many aspects, such as education levels, excessive working hours and low salary. However, with correct and appropriate policies, it is possible to mitigate the impact of the issue.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Problem-Solution </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The bar chart below shows the popularity of well-known Instagram accounts in 2018 and 2021.</title>
+      <link href="/2023/10/29/ielts-instagram/"/>
+      <url>/2023/10/29/ielts-instagram/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/10/29/ielts-instagram/Instagram_influencers.png" class><p>The bar chart details the follower statistics for five prestigious Instagram accounts in 2018 and 2021.</p><p>Overall, it is evident that all accounts have a considerable growth in their followers in this period. Cristiano Ronaldo reached the highest number of followers in 2021, whereas the Selena Gomez went from most to least popular over the period surveyed.</p><p>Looking at the graph more closely, Selena Gomez had by far the most followers, with 125 million, which was more than 10 million above Ariana Grande (112 million) and Ronaldo (110 million) in 2018. By 2021, Selena’s follower account had roughly doubled to 245 million while Ronaldo’s surged to lead all celebrities at 315 million and Ariana Grande increased more than twofold to 251 million. Kylie Jenner’s followers and The Rock were just around 95 million and 85 million in 2018, respectively; however, both influencers added approximately 150 million followers during three years.</p><p>All accounts experienced a huge growth in the followers’ number during three years, and Cristiano Ronaldo’s had the highest growth rate in this chart, which was around three times its initial figure. In 2018, the Rock had the smallest number (around 90 million people); however, the growth rate was also incredible, ranking in the second position on the bar chart, and the account followers reached approximately 250 million people in 2021.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Bar Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>A lot of people have become dependent on technology as it plays a big role in our daily lives.</title>
+      <link href="/2023/10/29/ietls-technology/"/>
+      <url>/2023/10/29/ietls-technology/</url>
+      
+        <content type="html"><![CDATA[<p>Do you agree that living in the computer age has more advantages than disadvantages? Describe the positive and negative impacts of technology on our lives and give your opinion.</p><img src="/2023/10/29/ietls-technology/Computer.webp" class><p>Modern technology has played a crucial role in our daily lives, such as computers and mobile phones. These bring us convenience, creativity and economical effects, which is difficult to imagine living without these cutting age technologies. This essay examine the upsides and downsides of computer age.</p><p>In terms of advantages, learning can be easier than before. First, various genres of programs are provided on YouTube, where children can experience culture differences, gain abundant knowledge, and learn a second language. For instance, BBC offers meaningful and educational programs and Discovery Channel is a popular source for observing wild animals. Second, these programs are digital recorded, which can be replayed at any time or anywhere without limitation. Moreover, children no longer bring heavy printed books because this educational knowledge can be stored in lightweight iPads. Thus, it is possible that reducing the carbon dioxide by utilizing these tools.</p><p>However, improper using technology has adverse impacts on individuals or even society. Recent studies have implied that our younger generation is addicted to Instagram or TikTok, where they waste time because pursing just more likes or spotlights. It is undeniable that these kinds of platforms have distracted us, which make us spend less time on our families or friends. Furthermore, misinformation as well as fake news is full on the Internet and there are more and more cyber issues in recent years such as hacking, phishing and Internet fraud. Governments or authorities should take measures to tackle these problems or discuss with the specialists to mitigate the impacts. For instance, anyone who spread misinformation should be sent into jails. For personal aspect, setting a time restriction on apps would be an efficient way to manage the time.</p><p>In conclusion, there are several benefits on computers and mobile phones, such as learning educational programs, experiencing culture or wild animals. Nevertheless, technology has its drawbacks on misinformation, addiction or scam. If we utilize these tools well, in my opinion, I believe the pros can &#x2F;will outweigh its drawbacks.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Pros and Cons </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>In their advertising, business nowadays usually emphasize that their products are new in some way. Why is this?</title>
+      <link href="/2023/10/27/ielts-advertising/"/>
+      <url>/2023/10/27/ielts-advertising/</url>
+      
+        <content type="html"><![CDATA[<p>Do you think it is a positive or negative development?</p><img src="/2023/10/27/ielts-advertising/Advertising.jpeg" class><p>Compelling advertisements typically catch everyone’s attention. Not only can they attract potential consumers to purchase, but they can provide the organization with greater incentive to develop new merchandise. In my opinion, it is positive development for our advertisements.</p><p>People naturally tend to prefer novelty than the familiar. Advertisements strategically leverage this inclination to improve their visibility among potential consumers because it will boost the appeal and popularity of products. Mark Zuckerberg, the founder of Meta, has released the latest application of social media, Thread, which is a text-oriented application distinct from Instagram. It appealed more than 1 million people, who registered for the service within just an hour. The registration speed surpassed that of ChatGPT, astonishing countless individuals.</p><p>Another aspect is that the company’s commitment to developing more innovate products to meet diverse demands, fostering creativity and convenience for users. To illustrate, Apple unveiled the Dynamic Island feature on iPhone 14 Pro series models, elevating the interactive touch capabilities in this compact region compared to its previous state. Moreover, Apple collaborated with third-party platforms like Spotify and Youtube, users can experience heightened functionality when interacting with these apps through the Dynamic Island. </p><p>However, the company should not only consider new features on their products. They should take into consideration factors such as portability, durability and environmental concerns. For instance, the iPhone 15 series has adopted type-C charging cables, but I believe this compliance with EU regulations should have been implemented earlier.</p><p>In conclusion, consumers are susceptible to stimulus which will lead the company to provide novel products or new ideas. The phenomenon has the potential to drive our business towards greater creativity, discovery, and exploration.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>A lot of places in the world rely on tourism as a main source of income. Unfortunately, tourism can also be a source of problems if it is not managed correctly.</title>
+      <link href="/2023/10/26/ielts-tourism/"/>
+      <url>/2023/10/26/ielts-tourism/</url>
+      
+        <content type="html"><![CDATA[<p>Describe the advantages and disadvantages of tourism in the modern world. Do you think that benefits of tourism outweigh its drawbacks?</p><img src="/2023/10/26/ielts-tourism/Tourism.jpeg" class><p>Traveling has recovered and become more popular after three years of severe pandemic or coronavirus. Some people assert tourism can have adverse impact on the environment. However, I do not agree with this and I will illustrate several compelling reasons for supporting the benefits of tourism outweigh its drawbacks.</p><p>Tourism boosts the economy. In many countries, it is evident that tourism indeed brings tens of thousands of visitors annually and the governments make profits from it. Human resources are essential key factors for the tourism, such as the waiters in the restaurants, the cleaners in the hotels and the ground crew in the airports. With such substantial demands, local companies can offer more higher salary for their employees. Moreover, tourists from wealthy countries can purchase more products which can help local people earn extra money.</p><p>Furthermore, traveling abroad not only opens our horizon but gives us more concerns on historical sites. First, experiencing local culture or customs is an amazing and unforgettable memory when flying to another country. For example, drinking beers with fired chicken is a popular trend in Korea when hanging out with friends. Second, lots of historical tourist attractions are preserved well because of money flow from tourists.</p><p>However, it is undeniable that more and more tourists cause earth-shattering consequences. Some people throw away plastic waste or trash to the mountains. Recently, a lot of visitors came to Mountain Fuji and left bunch of junks, which had negative impacts on the environment. Simultaneously, excessive visitors make the area crowded and noisy and affect local transportation. Governments should take measures to address the issues and regulate laws to protect the environment. In my opinion, these difficulties can be overcome with appropriate policy or laws, so they are not huge problems.</p><p>In conclusion, tourism can boost a country’s economy with job opportunities, product-selling. It also provides several benefits like opening one’s horizon and putting more emphasis on historical sites. Nevertheless, authorities should take actions to prevent the environment from vicious tourists’ destruction. It can benefit people and reduce the effect of its drawbacks by appropriate measures and I believe that the pros outweigh the cons.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Pros and Cons </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The pie chart below show how much money is spent in the budget on different sectors by the UAE government in 2000.</title>
+      <link href="/2023/10/25/ielts-expenditure/"/>
+      <url>/2023/10/25/ielts-expenditure/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/10/25/ielts-expenditure/Expenditure.png" class><p>The pie chart illustrates the proportion of expenditure on various departments by the UAE government in 2000.</p><p>Overall, it is clear that a huge amount of money was expended on social security in the surveyed year, whereas this figure for transportation was incredibly low.</p><p>Looking at the pie chart more closely, one can see that social security occupied the largest amount of expenditure (100 billion), while transport was the smallest figure (9 billion). The figure of health and personal social services was the second largest amount of spending in this pie chart, with 53 billion and its proportion was approximately twenty percent. The figure for education took up 38 billion, ranking third position in the pie chart, which was roughly 2 times higher than that for housing the heritage and environment, at 15 billion. The fractions for defense, debt interest and other expenditure were almost the same, which was 22 billion, 22 billion and 23 billion respectively. In addition, over 15 billion was expended on law and order in comparison with only 13 billion of that in terms of industry, agriculture and employment.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Pie Chart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The diagram show the recycling process of aluminum cans.</title>
+      <link href="/2023/10/23/ielts-recycling/"/>
+      <url>/2023/10/23/ielts-recycling/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/10/23/ielts-recycling/Recycling.webp" class><p>The diagram below illustrates the several stages of how to recycle aluminum cans.</p><p>Overall, it is evident that the process commences with disposing of the used cans and ends with manufacturing containers with reusing material.</p><p>Initially, used cans are thrown away into the trash bins then collected and sent to the special center which is particularly dealing with these containers for recycling. The aluminum cans are cleaned and sorted first, because they may be filthy and inappropriate for reusing. Subsequently, they are shredded and compressed by a sophisticated recycling machine. After completing the stage, the aluminum cans are heated and melted into the form of liquid, which is the raw material for reusing.</p><p>The liquid is rolled out to the thickness of between 2.5mm to 6.mm, and it is ready to apply the ingredients into producing the containers. The recycling products are used into various containers, such as drinks cans or foods jars, which are quite often seen in the supermarkets or convenience stores. In the UK, Coke Cola cans are made up of 74 percent recycled material.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Flowchart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Some people say that the main environmental problem of our time is the loss of particular species of plants and animals. Other say that there are more import environmental problems.</title>
+      <link href="/2023/10/21/ielts-environment/"/>
+      <url>/2023/10/21/ielts-environment/</url>
+      
+        <content type="html"><![CDATA[<p>Discuss both these views and give your own opinion.</p><img src="/2023/10/21/ielts-environment/Environment.jpeg" class><p>Environmental concerns have undeniably risen to the forefront of global issues in recent times. While some individuals emphasize the significance of the loss of specific species as the primary environmental challenge, others contend that there exist more critical problems warranting our immediate attention. In this essay, I will delve into both perspectives and present my own viewpoint.</p><p>Animals and plants play pivotal roles in our ecosystem. Their absence would lead to a loss of biodiversity, severely impacting the environment. Most plants are essential for carbon dioxide to oxygen conversion, a critical process for numerous Earth inhabitants. Moreover, certain animal species may become extinct due to the rising of sea levels, resulting in the destruction of its biodiversity, and thus, the disruption of food chains. Some fish or plants may disappear from our dining table and some farmers or fishermen may lose their livelihoods.</p><p>On the other hand, these environmental problems have direct and significant consequences for humans, making them more urgent and critical than the loss of biodiversity. First, air pollution has severe impacts on the individuals’ health, resulting in the disease or even cancer in cities such as Beijing. Second, rising sea levels affect island nations, forcing residents to leave their homes. Last but not least, improper disposal of plastic waste and trash not only fosters the proliferation of insects but makes our cities filthy or unsanitary.</p><p>In conclusion, though the loss of specific species is a significant environmental concern, issues such as air pollution, rising sea-level, and improper waste disposal have more immediate and direct impacts on humanity. It is vital that we prioritize environmental protection to safeguard not only biodiversity but our own well-being.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Both Views </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>關於我參加軟體工程師的專題班的那些事</title>
+      <link href="/2023/10/20/course-hex/"/>
+      <url>/2023/10/20/course-hex/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>這故事要提到我的職涯計畫，以前是在金融業做 Data Scientist 和 RPA (Robotic Process Automation)，那時候也有開發一些全端的網站應用。而當我接觸網站開發的那一刻起，我心中就對這塊充滿好奇心。</p><p>當時，我提出以儀表板方式呈現各部門使用 RPA 的情況，並簡單地進行了一個概念驗證（POC）。當主管看到這個儀表板時，對此印象深刻，甚至還請旁邊的其他同事來評估我所開發的網站。那時候，我內心充滿了成就感，也因此對轉向網站開發產生了興趣。</p><p>我平常使用的語言是 Python，開發的框架大多是 Flask、FastAPI 並搭配 Postgres。為了加深自己對於網站開發的技能，也對於現行軟體課程評估了一番，最後決定參加六角學院的軟體工程師企業專題班。</p><h2 id="關於課程"><a href="#關於課程" class="headerlink" title="關於課程"></a>關於課程</h2><p>課程主要使用 Node.js 搭配 Mongo DB 開發，這兩個也是我沒有接觸過的技術，下定決心要好好新技術，提升自己的職涯競爭力。</p><p>這個課程主要是完成專題為導向，大致上可以列出四點：</p><ul><li>約三個月完成網站開發專案</li><li>從零開始規劃網站線稿圖</li><li>短時間內學習新技術</li><li>與其他工程師遠端協作</li></ul><p>我想額外提到，每週五會有線上直播課程，每週一與專題教練對齊開發進度。由於課程的技術也會應用到專題上，因此也會更有動力在每週五晚上去聽老師的課程。而週末就會進行衝刺開發，也是為了在禮拜一可以跟教練同步我們做的進度。</p><h2 id="專案簡介"><a href="#專案簡介" class="headerlink" title="專案簡介"></a>專案簡介</h2><p>我們的專案名稱是「超人幫手」，座右銘是「讓您在生活中擁有超人的力量」。我們希望提供一個平台，讓使用者可以輕鬆地找到需要幫助的任務。同時，我們也希望讓使用者感受到自己像超人一樣有能力去幫助別人解決問題，實現自我價值的提升。</p><p>Live Demo ：<a href="https://superhandy-frontend.zeabur.app/">https://superhandy-frontend.zeabur.app/</a></p><p>GitHub Backend：<a href="https://github.com/erik1110/SuperHandy-backend">https://github.com/erik1110/SuperHandy-backend</a></p><p>GitHub Frontend：<a href="https://github.com/erik1110/SuperHandy-frontend">https://github.com/erik1110/SuperHandy-frontend</a></p><p>綜上所述，這是一個任務媒合系統，提供需求者「案主」與提供者「幫手」進行媒合。而我們開發的時候有四大功能：</p><ul><li><ol><li>地圖搜尋任務  <img src="/2023/10/20/course-hex/01.webp" class></li></ol></li><li><ol start="2"><li>技能評價  <img src="/2023/10/20/course-hex/02.webp" class></li></ol></li><li><ol start="3"><li>聊天室  <img src="/2023/10/20/course-hex/03.webp" class></li></ol></li><li><ol start="4"><li>會員點數加值  <img src="/2023/10/20/course-hex/04.webp" class></li></ol></li></ul><h2 id="關於小組"><a href="#關於小組" class="headerlink" title="關於小組"></a>關於小組</h2><p>我們組有五位工程師，後端包含我有兩位，前端有三位，我覺得我們組的開發效率、遠端協作與雙向溝通都很不錯。</p><p>平時我們在禮拜三、日的晚上會有小組大會議，這是大家一起參與，而這時候聚焦在整個專案的里程碑。例如前期一起規劃網站的架構、中期討論網站的大功能、後期討論前後端 API 介接的開發進度等等。</p><p>而後端會議通常會在日下午，有點算是晚上的會前會，我們會彼此討論後端的進度或是需要協助的部份。因此我自己盡量將份內的進度壓在日下午以前完成。</p><p>開會方式透過 Discord 的語音聊天，如下圖</p><p>(後端搞小圈圈還開一個後端小屋 🤣)</p><img src="/2023/10/20/course-hex/05.webp" class><h2 id="選擇技術"><a href="#選擇技術" class="headerlink" title="選擇技術"></a>選擇技術</h2><p>每個人時間都有限，大家平常也都需要上班，因此我們列出這次專題可能會用到的技術列表，每個人都會對想學的技術進行評分點數(一個點數為 4 個小時)，最後加總的點數大約落在 15 上下，代表這段時間可以學習的技術點數。(很像小時候玩線上遊戲，一開始的技術點數不太足夠，我們只能投資最想要的部分)</p><p>如下圖，這次我以學習 Node.js 、規劃資料庫環境為主，其他次要的包含第三方登入、金流串接和部署雲端。</p><img src="/2023/10/20/course-hex/06.webp" class><p>經濟學課本的第一句話：「資源有限，慾望無窮」，想要在短時間內完成多個技術學習難上加難，還可能會鼯鼠五技，不如在一開始先圈列好最想要的技能，並且透過量化方式來評估自己的時間可以事半功倍。</p><h2 id="規劃-API"><a href="#規劃-API" class="headerlink" title="規劃 API"></a>規劃 API</h2><p>終於來到規劃 API 的階段，透過線稿圖去構思可能會有哪些功能。這時候列出表格相當重要，首先教練希望就登入、使用者帳號先做好，因此在列出的同時，也可以同步開發。</p><p>基本上欄位至少需要包含角色、頁面群組、 API 名稱、API 路徑、方法，其他欄位是依照我們專案需求，例如進度、優先度等等。</p><img src="/2023/10/20/course-hex/07.webp" class><p>在規劃 API 的同時，我們也同步列出 Mongo DB 的 collection</p><img src="/2023/10/20/course-hex/08.webp" class><h2 id="開發階段"><a href="#開發階段" class="headerlink" title="開發階段"></a>開發階段</h2><p>前面紙上談兵告一段落，接下來進入實戰階段啦😆 我們大概從五月中旬陸續開發，後端可以先從建立 MongoDB 和 Swagger Docs 開始，熟悉 Node.js 的寫法著手。這邊要提到的是如果平常每週的直播課有跟著，並且寫回家作業的話，ㄧ開始使用 Express 建立 Node.js 會很快上手。</p><p>而後端的任務，就是將 API 列表中逐一實現到 Swagger Doc</p><img src="/2023/10/20/course-hex/09.webp" class><p>後端開發功能大概的依序是：</p><ul><li>登入註冊寄信</li><li>使用者資訊</li><li>首頁</li><li>刊登任務</li><li>找任務</li><li>系統通知</li><li>聊天室</li><li>金流串接</li><li>第三方登入</li></ul><p>這個階段教練檢核標準基本上是要看兩個角色是否可以進行互動，以我們專案需求來說，我們設計的任務系統包含「幫手」接任務、「案主」接任務。因此大致上我們完成到第五點就是本專案最主要的功能，後續 6～9 點是加分功能。由於開發時間有限，主要功能如果沒有先開發好，就算有加分功能也是白搭。</p><p>而我認為這次專案最難的地方也就是刊登任務，我們的需求是要做需求單據的系統，其中單據會有相當多種的狀態，並且還會有草稿區、下架模式。</p><img src="/2023/10/20/course-hex/10.webp" class><img src="/2023/10/20/course-hex/11.webp" class><p>補充說明，其實在前一個階段，我們也將這個考慮並著手規劃以下表格。而這張表也是要跟全組一起共同討論，因為這也關係到前端要怎麼呈現畫面。由於我們先定義好每個 status 的意義，在寫刊登任務相關功能就可以按照這張表進行開發。</p><img src="/2023/10/20/course-hex/12.webp" class><h2 id="協作工具"><a href="#協作工具" class="headerlink" title="協作工具"></a>協作工具</h2><p>下圖是我們有利用到的協作工具，而專案簡報是使用 Canvas。</p><img src="/2023/10/20/course-hex/13.webp" class><h2 id="心得分享"><a href="#心得分享" class="headerlink" title="心得分享"></a>心得分享</h2><p>經過這次的專案開發，除了認識一群工程師們好朋友，我們也完成很棒的 side project，讓我有滿滿的收穫和成就感。由於在每次與教練進度會議的時候，提前加入會議亦可以看到其他組的進度。有些其他組的組員可能剛好公司專案進行就會比較沒有時間開發、常常加班或是特殊情況，導致進度上較為落後。因此我真的很感謝組員們各各很罩，大家的進度都非常神速，也會互相 cover 和講幹話。</p><p>另外我想提到的是，平常上班都這麼辛苦了，為什麼大家下班還要進修並增進技術呢？我認為有兩點：</p><ul><li><ol><li>時間規劃：有多少人會記得在每年年初自己訂下的目標，而年底的時候能真的完成與實踐呢？我覺得能做到這點的人不多。因此，參加一門規劃好的課程，依照進度按表操課，並且有一群夥伴互相提醒切磋，我認為是相當不錯的方式。</li></ol></li><li><ol start="2"><li>提升自我：大家無非是想要提升技術，更重要的是提升職場競爭力，未來在面試時可以拿出 side project。透過實際去開發作品來應用技術，這些技能才會是自己的看家本領和真功夫。</li></ol></li></ul><p>感謝看到這篇文章的你，若不嫌棄可以鼓鼓掌給作者加油打氣，謝謝 😆</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Course </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 課程 </tag>
+            
+            <tag> 後端工程師 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nowadays, a growing number of people with health problems are trying alternative medicines and treatments instead of visiting their usual doctor.</title>
+      <link href="/2023/10/19/ielts-treatments/"/>
+      <url>/2023/10/19/ielts-treatments/</url>
+      
+        <content type="html"><![CDATA[<p>Do you think this is a positive or a negative development?</p><img src="/2023/10/19/ielts-treatments/Treatments.jpeg" class><p>It is undeniable that as individuals age, their bodies become more susceptible to illness, disease, or even cancer. Access to quality healthcare is a crucial concern worldwide, especially given the prevalence of sedentary lifestyles and poor dietary habits. Some people are drawn to alternative treatments; however, there are potential drawbacks to this approach that deserve consideration. In this essay, I will illustrate the underlying reasons on it.</p><p>Doctor undergo rigorous training and possess extensive professional knowledge in the field of medicine. In my hometown country, Taiwan, medical professionals spend a minimum of six to seven years studying before they are granted certification. Many doctors continue to pursue further education and training even after completing their formal studies, which underscores their dedication to staying up-to-date with the latest medical advancements. This level of expertise and commitment is crucial in ensuring that patients receive accurate diagnoses and appropriate treatment. Moreover, when patients consult doctors, they contribute to a body of knowledge that can be shared with others facing similar health issues.</p><p>One of the significant disadvantages of relying solely on alternative treatments is the potential for adverse side effects. Without the guidance of medical professionals or the support of empirical evidence from academic research, individuals may unknowingly expose themselves to unnecessary risks. Some alternative medicines and treatments may not be regulated by government health agencies, resulting in fluctuating prices and the risk of expired or counterfeit products. Widespread adoption of these alternatives could undermine the integrity of our healthcare system and jeopardize individual well-being, ultimately forcing people back to conventional medical care.</p><p>In conclusion, while alternative medicines and treatment may have their merits in certain cases, they should not be regarded as a wholesale replacement for conventional medical care. Doctor’s extensive training equip them to make informed decisions about patient’s health, ensuring that they receive the most appropriate treatment. Thus, it is advisable to seek professional medical guidance when addressing health issues.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Many manufactured food and drink products contain high levels of sugar, which causes many health problems. Sugary products should be made more expansive to encourage people to consume less sugar. Do you agree or disagree?</title>
+      <link href="/2023/10/18/ielts-sugar/"/>
+      <url>/2023/10/18/ielts-sugar/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/10/18/ielts-sugar/Sugar.jpeg" class><p>In recent times, people have been consuming more food than ever before, leading to potential health issues such as cancer or disease. Some individuals argue that increasing the prices of sugary products could discourage customers from excessive sugar consumption. However, I do not support this viewpoint and I will illustrate two underlying reasons in this essay.</p><p>Sugar manufactures primarily prioritize profit over health concerns. Placing the burden solely on these companies is not fair, as poor health can result from a variety of factors, including genetics, personal behaviors, habits, and environmental influences. It is acknowledged that the excessive sugar intake can contribute some illness like obesity, but raising the price of products will not deter consumers who have a strong preference for sugary drinks and sweets. Moreover, such a price increase could lead to economic and financial challenges for society. Instead, the government should consider implementing polices that mandate clear and informative labeling of nutritional content, enhancing transparency for consumers.</p><p>Another significant contributing factor is a lack of physical activity, which can lead to obesity or even cancer. This sedentary lifestyle becomes more prevalent as people age, contributing to various health problems. To address this, authorities should promote slogans like “three times a week at least 30 minutes” or offer health education programs to raise awareness among citizens. Engaging in regular physical activity not only decreases health problems but extends one’s lifespan. For individuals who claim they lack time for structured sports courses due to busy work schedules, research has shown that simple changes, such as walking ten thousand steps daily or opting for stairs over elevators, can serve as effective exercise.</p><p>In conclusion, raising the prices of sugary products may not be the most effective solution to combat health problems and could lead to unintended economic consequences. Instead, the government should focus on promoting physical activity through slogans or lessons. It is possible that sports can decrease the rate of health issues and span one’s lifespan.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The diagram illustrates how bees produce honey.</title>
+      <link href="/2023/10/17/ielts-honey/"/>
+      <url>/2023/10/17/ielts-honey/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/10/17/ielts-honey/Honey.webp" class><p>The given diagram shows the most important process of making honey which commences with making the hive and ends in storing the honey in the jars.</p><p>Initially, a bunch of bees has to build a container called a hive with a hexagonal shape. After building their repository of honey, they seek for nectar. Meanwhile, the blossoming plants release its fragrance which attracts bees. When bees find a suitable flower, they collect the nectar from it, which is used as the raw material to produce honey.</p><p>The nectar is taken back to the hive and then stored in its cells. This process may be taken time because there are a lot of cells in a hive. Subsequently, the bees flap their wings in order to generate the air to cool it down. As a result, the nectar loses it water content and then finally, the honey is produced. Ultimately, the collected honey is stored and packed in jars to be delivered to the markets.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Task1 </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Flowchart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Some people think that government should strictly control the supply of fresh water, as it is a limited resource, while others it should not be regulated.</title>
+      <link href="/2023/10/16/ielts-water/"/>
+      <url>/2023/10/16/ielts-water/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/10/16/ielts-water/Water.webp" class><p>For human beings, water is an indispensable and essential resource in the worldwide and its quality would have enormous impact on our health. While some individuals argue that it should not be governed by authorities, I believe there are more compelling reasons for the government to regulate water resources to ensure stability and high quality.</p><p>To begin with, one of the primary reasons for advocating government regulation of water is to prevent negative consequences. For instance, irresponsible factories may neglect environmental protection measures, leading to water pollution and irreversible damage to the environment. Without proper management, we might end up consuming contaminated water, which could result in health issues such as diarrhea. Furthermore, continuous monitoring of water quality and maintenance of water tanks require substantial financial investment and human resources.</p><p>Instead of relaying solely on self-regulation, the government should enact strict laws to control the supply of water. To illustrate, imposing severe penalties, such as life imprisonment, on those who pollute water sources would deter potential offenders. Governments should allocate funds for the development of advanced monitoring systems that track water quality, acidity, and remaining volume on a daily basis. These data should be made publicly accessible through a website to ensure transparency and allow people to make informed decisions about their water consumption.</p><p>In conclusion, the lack of regulations could lead to the consumption of unsafe water. It is essential for the government to take proactive measures to regulate the supply of fresh water to safeguard public health and the environment.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Television cannot replace the book as a learning tool, which is why children are less well educated today. Do you agree or disagree?</title>
+      <link href="/2023/10/16/ielts-television/"/>
+      <url>/2023/10/16/ielts-television/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/10/16/ielts-television/Television.jpeg" class><p>The Internet and television have become major tools for children to acquire new knowledge or materials. Some individuals argue that these tools have an adverse impact on children because they might replace the book. However, the benefits of television outweigh its drawbacks.</p><p>Television offers various educational contents. Since the advent of the Internet, programs can be access with different sources, such as Discovery and BBC. Children have the opportunity to learn about creatures in various environments, from scorching hot deserts to the extremely cold Arctic Circle via television programs. The educational programs offer the most authentic English from native speakers at BBC Learning English. These meaningful videos, they not only stimulate our learning motivation but they broaden our horizons without traveling abroad.</p><p>In addition, television programs can be digitally preserved regardless of weather or environmental conditions and stored permanently once it is uploaded to Google Drive or Dropbox. When we have enormous videos and materials on the Internet, tackling the challenge of effective search become crucial. Thanks to advanced algorithms, data retrieval has becomes nearly instantaneous, which makes it possible to spread the knowledge with efficiency. To illustrate, Youtube, as one of the primary platforms, hosts immense videos or movies, and basic keywords are usually sufficient to cater individual needs.</p><p>Proponents of traditional books often argue that they are irreplaceable due to the printed format. However, it is widely acknowledged that paper manufacturing, which involves the felling of numerous trees, contributes to the acceleration of global warming. Conversely, physical books have their drawbacks as they lack durability and are susceptible to moisture and dirt.</p><p>In conclusion, television can replace the books due to their educational contents, durability. It is possible that the digital of transmission of knowledge could replace the traditional methods in near future with its substantial advantages.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IELTS </tag>
+            
+            <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
+            
+            <tag> Opinion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
