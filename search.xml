@@ -13,16 +13,14 @@
       
       <categories>
           
-          <category> leetcode </category>
+          <category> Leetcode </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Leetcode </tag>
-            
-            <tag> Stack </tag>
+            <tag> DP </tag>
             
             <tag> Leetcode 75 </tag>
             
@@ -42,18 +40,16 @@
       
       <categories>
           
-          <category> leetcode </category>
+          <category> Leetcode </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Leetcode </tag>
-            
             <tag> Leetcode 75 </tag>
             
-            <tag> stack </tag>
+            <tag> Stack </tag>
             
         </tags>
       
