@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Leetcode 62 Unique Paths</title>
+      <link href="/2025/01/25/leetcode-62/"/>
+      <url>/2025/01/25/leetcode-62/</url>
+      
+        <content type="html"><![CDATA[<img src="/2025/01/25/leetcode-62/robot_maze.webp" class><p><a href="https://leetcode.com/problems/unique-paths">Leetcode Link</a></p><p>To understand this problem, let’s begin by considering a simple example: a 2x2 maze. In this maze, you can only move <strong>right</strong> or <strong>down</strong>. To reach the bottom-right corner ([1, 1]), there are two possible paths:</p><ol><li>Right → Down  </li><li>Down → Right</li></ol><p>Thus, we can conclude that for a 2x2 maze, there are <strong>2 unique paths</strong> to reach the bottom-right corner.</p><hr><h3 id="Extending-to-Larger-Grids"><a href="#Extending-to-Larger-Grids" class="headerlink" title="Extending to Larger Grids"></a>Extending to Larger Grids</h3><p>Let’s consider a larger grid, such as a 3x7 maze. We can construct a matrix to represent the number of ways to reach each cell. The key observation here is:</p><p><strong>The number of ways to reach a cell [i, j] is the sum of the number of ways to reach the cell directly above it ([i-1, j]) and the cell directly to its left ([i, j-1]).</strong></p><h4 id="Step-by-Step-Construction"><a href="#Step-by-Step-Construction" class="headerlink" title="Step-by-Step Construction"></a>Step-by-Step Construction</h4><ol><li>Start by initializing the grid. Each cell in the first row and first column has only one way to be reached since you can only move <strong>right</strong> or <strong>down</strong>:</li></ol><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1, 1, 1, 1, 1, 1, 1</span><br><span class="line">1,</span><br><span class="line">1,</span><br></pre></td></tr></table></figure><ol start="2"><li><p>Now, compute the value for each cell based on the formula:</p><ul><li>For cell [1, 1]:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">m[1][1] = m[0][1] + m[1][0] = 1 + 1 = 2</span><br></pre></td></tr></table></figure>Updated matrix:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1, 1, 1, 1, 1, 1, 1</span><br><span class="line">1, 2</span><br><span class="line">1,</span><br></pre></td></tr></table></figure></li></ul></li><li><p>Continue filling the matrix:</p><ul><li>For cell [2, 1]:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">m[2][1] = m[1][1] + m[2][0] = 2 + 1 = 3</span><br></pre></td></tr></table></figure></li><li>For cell [1, 2]:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">m[1][2] = m[0][2] + m[1][1] = 1 + 2 = 3</span><br></pre></td></tr></table></figure></li></ul><p>Updated matrix:</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1, 1, 1, 1, 1, 1, 1</span><br><span class="line">1, 2, 3</span><br><span class="line">1, 3</span><br></pre></td></tr></table></figure></li><li><p>By repeating this process, we can eventually fill the entire grid. For a 3x7 grid, the completed matrix looks like this:</p></li></ol><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1, 1, 1, 1, 1, 1, 1</span><br><span class="line">1, 2, 3, 4, 5, 6, 7</span><br><span class="line">1, 3, 6, 10, 15, 21, 28</span><br></pre></td></tr></table></figure><h3 id="Final-Answer"><a href="#Final-Answer" class="headerlink" title="Final Answer"></a>Final Answer</h3><p>The value at the bottom-right corner of the matrix represents the total number of unique paths. For a 3x7 grid, there are <strong>28 unique paths</strong>.</p><p>This approach can be generalized for any grid size using dynamic programming. By constructing a matrix and filling it based on the relationship between adjacent cells, you can efficiently compute the number of unique paths for any <code>m x n</code> grid.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Leetcode </tag>
+            
+            <tag> Stack </tag>
+            
+            <tag> Leetcode 75 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode 735 Asteroid Collision</title>
       <link href="/2025/01/21/leetcode-735/"/>
       <url>/2025/01/21/leetcode-735/</url>
@@ -22,9 +51,9 @@
             
             <tag> Leetcode </tag>
             
-            <tag> stack </tag>
-            
             <tag> Leetcode 75 </tag>
+            
+            <tag> stack </tag>
             
         </tags>
       
@@ -206,9 +235,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Opinion </tag>
             
@@ -237,9 +266,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -299,9 +328,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -450,9 +479,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Causes and Results </tag>
             
@@ -572,9 +601,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Problem-Solution </tag>
             
@@ -663,9 +692,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -843,9 +872,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Problem-Solution </tag>
             
@@ -874,9 +903,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Opinion </tag>
             
@@ -1023,9 +1052,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Opinion </tag>
             
@@ -1054,9 +1083,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Opinion </tag>
             
@@ -1174,11 +1203,11 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
             
             <tag> Both View </tag>
+            
+            <tag> Assignment </tag>
             
         </tags>
       
@@ -1236,9 +1265,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Opinion </tag>
             
@@ -1327,9 +1356,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Opinion </tag>
             
@@ -1418,9 +1447,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -1478,9 +1507,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -1716,9 +1745,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Opinion </tag>
             
@@ -1747,9 +1776,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Assignment </tag>
-            
             <tag> Task2 </tag>
+            
+            <tag> Assignment </tag>
             
             <tag> Opinion </tag>
             
