@@ -8,7 +8,7 @@
       <link href="/2025/02/23/leetcode-714/"/>
       <url>/2025/02/23/leetcode-714/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/">Leetcode Link</a></p><h2 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h2><p>Every day, we have two choices: either hold a stock or sell a stock.</p><p>Holding a stock means we either bought it on a previous day or purchased it today.<br>Selling a stock means we either still have cash from previous transactions or we sold a stock today.<br>To solve this problem efficiently, we can use dynamic programming.</p><h2 id="Understanding-the-Problem"><a href="#Understanding-the-Problem" class="headerlink" title="Understanding the Problem"></a>Understanding the Problem</h2><p>Given an array prices where prices[i] represents the stock price on the ith day, and an integer fee representing the transaction fee, our goal is to determine the maximum profit achievable through multiple transactions while ensuring that we pay the fee each time we sell a stock.</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">prices = [1,3,2,8,4,9], fee = 2</span><br></pre></td></tr></table></figure><h2 id="Initial-Approach"><a href="#Initial-Approach" class="headerlink" title="Initial Approach"></a>Initial Approach</h2><p>At first, we might attempt to define dp[i] as follows:</p><ul><li><p>Buying a stock: dp[i] &#x3D; dp[i-1] - prices[i]</p></li><li><p>Selling a stock: dp[i] &#x3D; dp[i-1] + prices[i] - fee</p></li><li><p>Doing nothing: dp[i] &#x3D; dp[i-1]<br>However, this approach is incorrect because in order to sell a stock, we must have previously purchased and held it. This means we need to track two separate states:</p></li><li><p>hold[i] – The maximum profit when holding a stock on day i</p></li><li><p>cash[i] – The maximum profit when not holding any stock (i.e., holding cash) on day i</p></li></ul><h2 id="State-Transition-Equations"><a href="#State-Transition-Equations" class="headerlink" title="State Transition Equations"></a>State Transition Equations</h2><p>Since we can either continue holding or buy a new stock, the state transitions are as follows:</p><ul><li>Buying a stock:<br>hold[i] &#x3D; max(hold[i-1], cash[i-1] - prices[i])<br>(Either we continue holding from the previous day, or we buy a new stock using available cash.)<br>Selling a stock:</li><li>cash[i] &#x3D; max(cash[i-1], hold[i-1] + prices[i] - fee)<br>(Either we keep the cash from yesterday, or we sell the stock we were holding and gain profit minus the transaction fee.)</li><li>Doing nothing:<ul><li>hold[i] &#x3D; hold[i-1] (If we don’t buy today, our hold value remains the same.)</li><li>cash[i] &#x3D; cash[i-1] (If we don’t sell today, our cash remains the same.)</li></ul></li></ul><h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>We create two arrays, hold and cash, to store the values for each state over n days:</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int maxProfit(int[] prices, int fee) &#123;</span><br><span class="line">        int n = prices.length;</span><br><span class="line">        int [] hold = new int[n];</span><br><span class="line">        int [] cash = new int[n];</span><br><span class="line"></span><br><span class="line">        hold[0] = -prices[0];</span><br><span class="line">        cash[0] = 0;</span><br><span class="line"></span><br><span class="line">        for (int i = 1; i &lt; n; i++) &#123;</span><br><span class="line">            hold[i] = Math.max(hold[i-1], cash[i-1] - prices[i]);</span><br><span class="line">            cash[i] = Math.max(cash[i-1], hold[i-1] + prices[i] - fee);</span><br><span class="line">        &#125;</span><br><span class="line">        return cash[n-1];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<img src="/2025/02/23/leetcode-714/stock.webp" class><p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/">Leetcode Link</a></p><h2 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h2><p>Every day, we have two choices: either hold a stock or sell a stock.</p><p>Holding a stock means we either bought it on a previous day or purchased it today.<br>Selling a stock means we either still have cash from previous transactions or we sold a stock today.<br>To solve this problem efficiently, we can use dynamic programming.</p><h2 id="Understanding-the-Problem"><a href="#Understanding-the-Problem" class="headerlink" title="Understanding the Problem"></a>Understanding the Problem</h2><p>Given an array prices where prices[i] represents the stock price on the ith day, and an integer fee representing the transaction fee, our goal is to determine the maximum profit achievable through multiple transactions while ensuring that we pay the fee each time we sell a stock.</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">prices = [1,3,2,8,4,9], fee = 2</span><br></pre></td></tr></table></figure><h2 id="Initial-Approach"><a href="#Initial-Approach" class="headerlink" title="Initial Approach"></a>Initial Approach</h2><p>At first, we might attempt to define dp[i] as follows:</p><ul><li><p>Buying a stock: dp[i] &#x3D; dp[i-1] - prices[i]</p></li><li><p>Selling a stock: dp[i] &#x3D; dp[i-1] + prices[i] - fee</p></li><li><p>Doing nothing: dp[i] &#x3D; dp[i-1]<br>However, this approach is incorrect because in order to sell a stock, we must have previously purchased and held it. This means we need to track two separate states:</p></li><li><p>hold[i] – The maximum profit when holding a stock on day i</p></li><li><p>cash[i] – The maximum profit when not holding any stock (i.e., holding cash) on day i</p></li></ul><h2 id="State-Transition-Equations"><a href="#State-Transition-Equations" class="headerlink" title="State Transition Equations"></a>State Transition Equations</h2><p>Since we can either continue holding or buy a new stock, the state transitions are as follows:</p><ul><li>Buying a stock:<br>hold[i] &#x3D; max(hold[i-1], cash[i-1] - prices[i])<br>(Either we continue holding from the previous day, or we buy a new stock using available cash.)<br>Selling a stock:</li><li>cash[i] &#x3D; max(cash[i-1], hold[i-1] + prices[i] - fee)<br>(Either we keep the cash from yesterday, or we sell the stock we were holding and gain profit minus the transaction fee.)</li><li>Doing nothing:<ul><li>hold[i] &#x3D; hold[i-1] (If we don’t buy today, our hold value remains the same.)</li><li>cash[i] &#x3D; cash[i-1] (If we don’t sell today, our cash remains the same.)</li></ul></li></ul><h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>We create two arrays, hold and cash, to store the values for each state over n days:</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int maxProfit(int[] prices, int fee) &#123;</span><br><span class="line">        int n = prices.length;</span><br><span class="line">        int [] hold = new int[n];</span><br><span class="line">        int [] cash = new int[n];</span><br><span class="line"></span><br><span class="line">        hold[0] = -prices[0];</span><br><span class="line">        cash[0] = 0;</span><br><span class="line"></span><br><span class="line">        for (int i = 1; i &lt; n; i++) &#123;</span><br><span class="line">            hold[i] = Math.max(hold[i-1], cash[i-1] - prices[i]);</span><br><span class="line">            cash[i] = Math.max(cash[i-1], hold[i-1] + prices[i] - fee);</span><br><span class="line">        &#125;</span><br><span class="line">        return cash[n-1];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> DP </tag>
-            
             <tag> Leetcode 75 </tag>
+            
+            <tag> DP </tag>
             
         </tags>
       
@@ -74,9 +74,9 @@
       
         <tags>
             
-            <tag> DP </tag>
-            
             <tag> Leetcode 75 </tag>
+            
+            <tag> DP </tag>
             
         </tags>
       
@@ -285,9 +285,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -316,9 +316,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -378,9 +378,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -529,9 +529,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Causes and Results </tag>
             
@@ -651,9 +651,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Problem-Solution </tag>
             
@@ -742,9 +742,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -922,9 +922,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Problem-Solution </tag>
             
@@ -953,9 +953,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1102,9 +1102,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1133,9 +1133,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1253,11 +1253,11 @@
             
             <tag> IELTS </tag>
             
+            <tag> Assignment </tag>
+            
             <tag> Task2 </tag>
             
             <tag> Both View </tag>
-            
-            <tag> Assignment </tag>
             
         </tags>
       
@@ -1315,9 +1315,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1406,9 +1406,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1497,9 +1497,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -1557,9 +1557,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Pros and Cons </tag>
             
@@ -1795,9 +1795,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
@@ -1826,9 +1826,9 @@
             
             <tag> IELTS </tag>
             
-            <tag> Task2 </tag>
-            
             <tag> Assignment </tag>
+            
+            <tag> Task2 </tag>
             
             <tag> Opinion </tag>
             
