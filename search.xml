@@ -4,12 +4,45 @@
   
     
     <entry>
+      <title>2130. Maximum Twin Sum of a Linked List</title>
+      <link href="/2025/06/03/leetcode-2130/"/>
+      <url>/2025/06/03/leetcode-2130/</url>
+      
+        <content type="html"><![CDATA[<img src="/2025/06/03/leetcode-2130/pair.webp" class><p><a href="https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list">Leetcode Link</a></p><p>This problem can be approached using the reverse linked list technique.<br>If you haven’t solved <a href="https://leetcode.com/problems/reverse-linked-list/description">Leetcode 206</a> before, I recommend doing that first to get familiar with how to reverse a singly linked list.</p><p>Input: head &#x3D; [4,2,2,3]<br>Output: 7</p><p>Since the twin sum is defined as summing the i-th node from the start with the i-th node from the end (for a list of even length), we can reverse the linked list to simulate accessing nodes from the back.</p><p>Original: [4, 2, 2, 3]<br>Reversed: [3, 2, 2, 4]</p><p>Then we can traverse both lists in order and compute the sum of each pair.<br>In this case, we compare:</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 + 3 = 7</span><br><span class="line">2 + 2 = 4</span><br><span class="line">2 + 2 = 4</span><br><span class="line">3 + 4 = 7</span><br></pre></td></tr></table></figure><p>So the maximum twin sum is 7.</p><p>Since we cannot directly clone a linked list in Java, we need to manually copy the list. Here’s the helper function I wrote to do that:</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public ListNode copyList(ListNode head) &#123;</span><br><span class="line">    if (head == null) return null;</span><br><span class="line"></span><br><span class="line">    ListNode newHead = new ListNode(head.val);</span><br><span class="line">    ListNode currOld = head.next;</span><br><span class="line">    ListNode currNew = newHead;</span><br><span class="line"></span><br><span class="line">    while (currOld != null) &#123;</span><br><span class="line">        currNew.next = new ListNode(currOld.val);</span><br><span class="line">        currNew = currNew.next;</span><br><span class="line">        currOld = currOld.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return newHead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>We create two copies of the original linked list:</p><ul><li>One in original order</li><li>One reversed</li></ul><p>Then we iterate over both lists and calculate the twin sum at each step.</p><p>One optimization that can be made: since twin pairs are symmetric, we only need to iterate halfway through the list.<br>Alternatively, we can use a fast and slow pointer to find the midpoint of the original list, reverse only the second half, and calculate the twin sums that way (more space-efficient).</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode() &#123;&#125;</span><br><span class="line"> *     ListNode(int val) &#123; this.val = val; &#125;</span><br><span class="line"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public int pairSum(ListNode head) &#123;</span><br><span class="line">        ListNode tempNode = copyList(head);</span><br><span class="line">        ListNode curr = copyList(head);</span><br><span class="line">        ListNode rev = reverseNode(tempNode);</span><br><span class="line">        int max = 0;</span><br><span class="line">        while (curr != null &amp;&amp; rev != null) &#123;</span><br><span class="line">            int temp = curr.val + rev.val;</span><br><span class="line">            if (temp &gt; max) &#123;</span><br><span class="line">                max = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            curr = curr.next;</span><br><span class="line">            rev = rev.next;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public ListNode reverseNode(ListNode head) &#123;</span><br><span class="line">        ListNode prev = null;</span><br><span class="line">        ListNode curr = head;</span><br><span class="line">        while (curr != null) &#123;</span><br><span class="line">            ListNode next = curr.next;</span><br><span class="line">            curr.next = prev;</span><br><span class="line">            prev = curr;</span><br><span class="line">            curr = next;</span><br><span class="line">        &#125;</span><br><span class="line">        return prev;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public ListNode copyList(ListNode head) &#123;</span><br><span class="line">        if (head == null) return null;</span><br><span class="line"></span><br><span class="line">        ListNode newHead = new ListNode(head.val);</span><br><span class="line">        ListNode currOld = head.next;</span><br><span class="line">        ListNode currNew = newHead;</span><br><span class="line"></span><br><span class="line">        while (currOld != null) &#123;</span><br><span class="line">            currNew.next = new ListNode(currOld.val);</span><br><span class="line">            currNew = currNew.next;</span><br><span class="line">            currOld = currOld.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return newHead;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Leetcode 75 </tag>
+            
+            <tag> Monotonic Stack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>739. Daily Temperatures</title>
       <link href="/2025/05/30/leetcode-739/"/>
       <url>/2025/05/30/leetcode-739/</url>
       
         <content type="html"><![CDATA[<img src="/2025/05/30/leetcode-739/stack.webp" class><p><a href="https://leetcode.com/problems/daily-temperatures">Leetcode Link</a></p><p>A brute-force solution would use two nested loops to compare each day’s temperature with the upcoming days, resulting in O(n²) time complexity, which is inefficient for large inputs.</p><p>To optimize this, we can use a monotonic stack to store temperature information, reducing the time complexity to O(n).</p><p>Input: temperatures &#x3D; [73,74,75,71,69,72,76,73]<br>Output: [1,1,4,2,1,1,0,0]</p><p>Step-by-step Stack Simulation:<br>We first initialize a result array of the same length, filled with 0s:</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">res = [0, 0, 0, 0, 0, 0, 0, 0]  </span><br><span class="line">stack = []  // Each element is [index, temperature]</span><br></pre></td></tr></table></figure><ul><li><p>Index &#x3D; 0<br>  Stack: [[0, 73]]<br>  We push the current day.</p></li><li><p>Index &#x3D; 1<br>  74 &gt; 73 → pop [0, 73]<br>  res[0] &#x3D; 1 - 0 &#x3D; 1<br>  Stack: [[1, 74]]<br>  Since today is warmer than the day at the top of the stack, we resolve the waiting day (index 0).<br>  Then, we push the current day.</p></li><li><p>Index &#x3D; 2<br>  75 &gt; 74 → pop [1, 74]<br>  res[1] &#x3D; 2 - 1 &#x3D; 1<br>  Stack: [[2, 75]]<br>  Again, today is warmer than the top of the stack, so we resolve index 1.<br>  Push current index to wait for a warmer day.</p></li><li><p>Index &#x3D; 3<br>  71 &lt; 75 → push [3, 71]<br>  Stack: [[2, 75], [3, 71]]<br>  Since today is cooler, we can’t resolve any previous day.<br>  Just push this day onto the stack.</p></li><li><p>Index &#x3D; 4<br>  69 &lt; 71 → push [4, 69]<br>  Stack: [[2, 75], [3, 71], [4, 69]]<br>  Still cooler than any unresolved day, so we just push.</p></li><li><p>Index &#x3D; 5</p><p>  72 &gt; 69 → pop [4, 69], res[4] &#x3D; 5 - 4 &#x3D; 1</p><p>  72 &gt; 71 → pop [3, 71], res[3] &#x3D; 5 - 3 &#x3D; 2</p><p>  72 &lt; 75 → push [5, 72]</p><p>  Stack: [[2, 75], [5, 72]]</p></li></ul><p>… and so on, until the entire array is processed.</p><p>This approach ensures that each temperature is pushed and popped from the stack at most once, resulting in an efficient O(n) solution.</p><p>This is JAVA version</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] dailyTemperatures(int[] temperatures) &#123;</span><br><span class="line">        Stack&lt;int[]&gt; stack = new Stack&lt;&gt;();</span><br><span class="line">        int[] res = new int[temperatures.length];</span><br><span class="line">        for (int i = 0; i &lt; temperatures.length; i++) &#123;</span><br><span class="line">            int t = temperatures[i];</span><br><span class="line">            while (!stack.isEmpty() &amp;&amp; t &gt; stack.peek()[1]) &#123;</span><br><span class="line">                int[] top = stack.pop();</span><br><span class="line">                res[top[0]] = i - top[0];</span><br><span class="line">            &#125;</span><br><span class="line">            stack.push(new int[]&#123;i, t&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
       
       
         <tags>
@@ -277,9 +310,9 @@
             
             <tag> Mixed </tag>
             
-            <tag> Table </tag>
-            
             <tag> Pie Chart </tag>
+            
+            <tag> Table </tag>
             
         </tags>
       
