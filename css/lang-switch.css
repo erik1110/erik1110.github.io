@@ -1,0 +1,17 @@
+/* Language switcher in the top-right nav.
+   Matches the other nav items (plain icon + text, no border/pill);
+   only the icon is swapped for a country flag. */
+#lang-switch.lang-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.7rem;
+}
+
+#lang-switch.lang-switch-btn .fi {
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 0.35em;
+  border-radius: 2px;
+  background-size: cover;
+  vertical-align: -0.15em;
+}
